@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterEvent, RouterLink } from '@angular/router';
+import {Router, RouterEvent, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SubscriptionService } from '../subscription.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LocalService } from '../local.service';
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -34,10 +33,11 @@ export class LoginComponent {
           }
           if(response==2){
             alert("Password Invalid");
-          }
+          }else{
           if(response==3){
             alert("InValid Credentials");
           }
+        }
         }
       )
     }

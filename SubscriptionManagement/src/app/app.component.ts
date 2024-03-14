@@ -13,9 +13,4 @@ export class AppComponent {
   constructor(private router: Router) {
     
   }
-
-  goToLogin(){
-    console.log("Here is Login")
-      this.router.navigateByUrl('/login');
-  }
 }

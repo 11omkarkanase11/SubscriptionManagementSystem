@@ -21,11 +21,15 @@ export class LoginComponent {
   password='';
 
   login(){
+    if(this.userId == '' || this.password == ''){
+        alert("Please enter something");
+    }
+    else{
       this.loginservice.login(this.userId, this.password).subscribe(
         (response)=>{
           if(response==1){
             alert("Login Success");
-           
+            this.localservice.setItem("userId", this.userId);
           }
           if(response==2){
             alert("Password Invalid");
@@ -36,6 +40,7 @@ export class LoginComponent {
         }
         }
       )
+    }
   }
 
 }

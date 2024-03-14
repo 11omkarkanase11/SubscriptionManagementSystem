@@ -5,6 +5,7 @@ import {Router, RouterEvent, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SubscriptionService } from '../subscription.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LocalService } from '../local.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LoginComponent {
    
-  constructor(private loginservice : SubscriptionService,private router: Router){}
+  constructor(private loginservice : SubscriptionService , private localservice : LocalService){}
 
   userId='';
   password='';
@@ -24,14 +25,15 @@ export class LoginComponent {
         (response)=>{
           if(response==1){
             alert("Login Success");
-            this.router.navigateByUrl('/dashboard');
+           
           }
           if(response==2){
             alert("Password Invalid");
-          }
+          }else{
           if(response==3){
             alert("InValid Credentials");
           }
+        }
         }
       )
   }

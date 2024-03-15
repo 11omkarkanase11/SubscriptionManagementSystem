@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { LocalService } from '../local.service';
 import { SubscriptionService } from '../subscription.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-upgradedplans',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './upgradedplans.component.html',
   styleUrl: './upgradedplans.component.css'
 })
@@ -20,11 +21,34 @@ export class UpgradedplansComponent implements OnInit{
     if (storedUserId) {
       this.userId = storedUserId;
 
-     
+      this.subscriptionService.displayUpgradablePlans(this.localservice.getItem('planId'),this.localservice.getItem('serviceName')).subscribe(
+        (response) => {
+          console.log(response);
+          this.userPlans = response;
+      
+
+        },
+        (error) => {
+          console.error('Error fetching user plans:', error);
+          // Handle error here
+        }
+      );
     }
   }
 
-  updatenewplan(){
+  updatenewplan(planId:string,planCost:number,duration:number,serviceName:string){
+this.localservice.setItem("newPlanId",planId);
+
+this.subscriptionService.updatePlan(this.localservice.getItem("userId"),this.localservice.getItem("planId"),planCost,duration,planId).subscribe(
+  (response)=>{
+    if(response){
+       console.log(response);
+    }
+    else{
+      alert("Account Not Created");
+    }
+  }
+)
 
   }
 }

@@ -1,8 +1,9 @@
 <h1>You can upgrade to following plans</h1>
-<!-- <h3>{{ plan.serviceName }}</h3>
-        <div class="plan-details">
-            <p><strong>Duration:</strong> {{ plan.duration }} days</p>
-            <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
-            <p><strong>Expiring on</strong> {{ plan.endDate}}</p>
-        </div> -->
-        <button (click)="updatenewplan()">Upgrade</button>
+<div *ngFor="let plan of userPlans">
+    <h3>{{ plan.serviceName }}</h3>
+    <div class="plan-details">
+        <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+        <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
+    </div>
+    <button (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName)">Update</button>
+</div>

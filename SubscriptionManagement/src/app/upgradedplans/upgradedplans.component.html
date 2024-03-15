@@ -5,5 +5,5 @@
         <p><strong>Duration:</strong> {{ plan.duration }} days</p>
         <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
     </div>
-    <button (click)="updatenewplan()">Update</button>
+    <button (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName)">Update</button>
 </div>

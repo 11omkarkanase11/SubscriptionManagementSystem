@@ -34,4 +34,16 @@ return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}
    return this.http.post<any>(`${this.url1}/signup`,dto);
   }
 
+  updatePlan(userId:any,planId:any,planCost:any,duration:any,newPlanId:any){
+const dto={
+userId:userId,
+  planId:planId,
+  userAmount:planCost,
+  duration:duration,
+  newPlanId:newPlanId
+};
+return this.http.post<any>(`${this.url1}/updateplan`,dto);
+
+  }
+
 }

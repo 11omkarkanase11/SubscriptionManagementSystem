@@ -36,7 +36,19 @@ export class UpgradedplansComponent implements OnInit{
     }
   }
 
-  updatenewplan(){
+  updatenewplan(planId:string,planCost:number,duration:number,serviceName:string){
+this.localservice.setItem("newPlanId",planId);
+
+this.subscriptionService.updatePlan(this.localservice.getItem("userId"),this.localservice.getItem("planId"),planCost,duration,planId).subscribe(
+  (response)=>{
+    if(response){
+       console.log(response);
+    }
+    else{
+      alert("Account Not Created");
+    }
+  }
+)
 
   }
 }

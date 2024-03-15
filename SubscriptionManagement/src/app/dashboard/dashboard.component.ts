@@ -30,12 +30,6 @@ export class DashboardComponent implements OnInit{
         (response) => {
           console.log(response);
           this.userPlans = response;
-          for(let plan of this.userPlans){
-            this.planId= plan.planId;
-            console.log(this.planId);
-          }
-      
-
         },
         (error) => {
           console.error('Error fetching user plans:', error);
@@ -49,6 +43,10 @@ export class DashboardComponent implements OnInit{
     this.router.navigateByUrl('/upgradedplans');
     this.localservice.setItem("planId", planId);
     this.localservice.setItem("serviceName",serviceName);
+  }
+
+  viewPlans(){
+    this.router.navigate(['allplan']);
   }
 
 }

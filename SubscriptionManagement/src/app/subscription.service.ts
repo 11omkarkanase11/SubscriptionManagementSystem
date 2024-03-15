@@ -20,6 +20,8 @@ export class SubscriptionService {
     return this.http.get<any>(`${this.url}/getuserplans/${userId}`);
   }
 
+
+  signup(userId:any, password:any, email:any, name:any):Observable<any>{
 displayUpgradablePlans(planId:any, serviceName:any){
 return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}`);
 }
@@ -34,6 +36,21 @@ return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}
    return this.http.post<any>(`${this.url1}/signup`,dto);
   }
 
+  viewAllPlan(userId:any):Observable<any>{
+    return this.http.get<any>(`${this.url}/getallplans/${userId}`);
+  }
+
+  addPlan(userId: any, planId:any, userAmount:any, duration:any):Observable<any>{
+     const dto={
+      userId: userId,
+      planId: planId, 
+      userAmount: userAmount,
+      duration: duration
+     }
+     return this.http.post(`${this.url1}/addplaninuser`, dto)
+  }
+
+
   updatePlan(userId:any,planId:any,planCost:any,duration:any,newPlanId:any){
 const dto={
 userId:userId,
@@ -45,5 +62,4 @@ userId:userId,
 return this.http.post<any>(`${this.url1}/updateplan`,dto);
 
   }
-
 }

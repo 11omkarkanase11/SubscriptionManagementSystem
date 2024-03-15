@@ -21,7 +21,7 @@ export class SignupComponent {
     
   }
   signup(){
-      this.singupservice.singup(this.userId, this.password,this.email,this.name).subscribe(
+      this.singupservice.signup(this.userId, this.password,this.email,this.name).subscribe(
         (response)=>{
           if(response){
              this.router.navigate(['login']);
@@ -32,5 +32,6 @@ export class SignupComponent {
         }
       )
   }
+  
 
 }

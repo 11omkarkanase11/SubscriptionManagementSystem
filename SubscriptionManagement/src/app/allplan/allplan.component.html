@@ -1,0 +1,10 @@
+<div>
+    <div *ngFor="let plan of allPlans">
+        <h3>{{ plan.serviceName }}</h3>
+        <div class="plan-details">
+            <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+            <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
+        </div>
+        <button (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Add</button>
+    </div>
+</div>

@@ -1,18 +1,44 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from '../local.service';
+import { SubscriptionService } from '../subscription.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit{
-  ngOnInit(): void {
-    
-  }
   serviceName=''
-  planStartDate= Date;
+  planEndDate: Date | null = null;
   remainingDuration=0;
   planCost=0;
+  userId=''
+  userPlans: any[] = [];
+  constructor(private localservice : LocalService,private subscriptionService:SubscriptionService){}
+  ngOnInit(): void {
+    const storedUserId = this.localservice.getItem('userId');
+    if (storedUserId) {
+      this.userId = storedUserId;
+
+      // Call the method to fetch user plans and subscribe to it
+      this.subscriptionService.displayUserPlans(this.userId).subscribe(
+        (response) => {
+          console.log(response);
+          this.userPlans = response;
+        },
+        (error) => {
+          console.error('Error fetching user plans:', error);
+          // Handle error here
+        }
+      );
+    }
+  }
+
+  upgrade(){
+    
+  }
+
 }

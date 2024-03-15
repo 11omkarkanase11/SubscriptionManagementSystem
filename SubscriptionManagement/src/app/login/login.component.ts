@@ -15,7 +15,7 @@ import { LocalService } from '../local.service';
 })
 export class LoginComponent {
    
-  constructor(private loginservice : SubscriptionService , private localservice : LocalService){}
+  constructor(private loginservice : SubscriptionService , private localservice : LocalService, private router: Router){}
 
   userId='';
   password='';
@@ -30,6 +30,7 @@ export class LoginComponent {
           if(response==1){
             alert("Login Success");
             this.localservice.setItem("userId", this.userId);
+            this.router.navigateByUrl('/dashboard');
           }
           if(response==2){
             alert("Password Invalid");

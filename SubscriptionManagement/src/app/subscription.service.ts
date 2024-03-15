@@ -20,6 +20,10 @@ export class SubscriptionService {
     return this.http.get<any>(`${this.url}/getuserplans/${userId}`);
   }
 
+displayUpgradablePlans(planId:any, serviceName:any){
+return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}`);
+}
+
   singup(userId:any, password:any, email:any, name:any):Observable<any>{
     const dto={
       userId:userId,

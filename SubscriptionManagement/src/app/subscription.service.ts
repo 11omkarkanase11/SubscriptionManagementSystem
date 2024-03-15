@@ -20,7 +20,7 @@ export class SubscriptionService {
     return this.http.get<any>(`${this.url}/getuserplans/${userId}`);
   }
 
-  singup(userId:any, password:any, email:any, name:any):Observable<any>{
+  signup(userId:any, password:any, email:any, name:any):Observable<any>{
     const dto={
       userId:userId,
       password:password,
@@ -29,5 +29,21 @@ export class SubscriptionService {
     };
    return this.http.post<any>(`${this.url1}/signup`,dto);
   }
+
+  viewAllPlan(userId:any):Observable<any>{
+    return this.http.get<any>(`${this.url}/getallplans/${userId}`);
+  }
+
+  addPlan(userId: any, planId:any, userAmount:any, duration:any):Observable<any>{
+     const dto={
+      userId: userId,
+      planId: planId, 
+      userAmount: userAmount,
+      duration: duration
+     }
+     return this.http.post(`${this.url1}/addplaninuser`, dto)
+  }
+
+
 
 }

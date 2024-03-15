@@ -1,10 +1,11 @@
-<p>dashboard works!</p>
 <div id="userplan">
-<h3>{{serviceName}}</h3>
-<label for="">Plan Start Date</label>
-<h6>{{planStartDate}}</h6>
-<label for="">Plan expiring in</label>
-<h6>{{remainingDuration}}</h6>
-<label for="">Plan Cost</label>
-<h6>{{planCost}}</h6>
+    <div *ngFor="let plan of userPlans">
+        <h3>{{ plan.serviceName }}</h3>
+        <div class="plan-details">
+            <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+            <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
+            <p><strong>Expiring on</strong> {{ plan.endDate}}</p>
+        </div>
+        <button (click)="upgrade()">Upgrade</button>
+    </div>
 </div>

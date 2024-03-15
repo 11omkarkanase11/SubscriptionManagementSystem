@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class SubscriptionService {
   
-  url ="http://192.168.5.107:8080/sakshi"
+  url ="http://localhost:8080/sakshi"
   constructor(private http: HttpClient) { }
 
   login(userId:any, password:any):Observable<any>{
 
      return this.http.get<any>(`${this.url}/login/${userId}/${password}`);
+  }
+
+  displayUserPlans(userId:any):Observable<any>{
+    return this.http.get<any>(`${this.url}/getuserplans/${userId}`);
   }
 }

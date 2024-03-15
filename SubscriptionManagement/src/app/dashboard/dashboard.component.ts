@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalService } from '../local.service';
 import { SubscriptionService } from '../subscription.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,8 +17,9 @@ export class DashboardComponent implements OnInit{
   remainingDuration=0;
   planCost=0;
   userId=''
+  planId=''
   userPlans: any[] = [];
-  constructor(private localservice : LocalService,private subscriptionService:SubscriptionService){}
+  constructor(private localservice : LocalService,private subscriptionService:SubscriptionService, private router: Router){}
   ngOnInit(): void {
     const storedUserId = this.localservice.getItem('userId');
     if (storedUserId) {
@@ -28,6 +30,12 @@ export class DashboardComponent implements OnInit{
         (response) => {
           console.log(response);
           this.userPlans = response;
+          for(let plan of this.userPlans){
+            this.planId= plan.planId;
+            console.log(this.planId);
+          }
+      
+
         },
         (error) => {
           console.error('Error fetching user plans:', error);
@@ -37,8 +45,10 @@ export class DashboardComponent implements OnInit{
     }
   }
 
-  upgrade(){
-    
+  upgrade(planId: string, serviceName: string){
+    this.router.navigateByUrl('/upgradedplans');
+    this.localservice.setItem("planId", planId);
+    this.localservice.setItem("serviceName",serviceName);
   }
 
 }

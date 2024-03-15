@@ -21,12 +21,12 @@ export class SubscriptionService {
   }
 
 
-  signup(userId:any, password:any, email:any, name:any):Observable<any>{
-displayUpgradablePlans(planId:any, serviceName:any){
+//   
+   displayUpgradablePlans(planId:any, serviceName:any){
 return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}`);
 }
 
-  singup(userId:any, password:any, email:any, name:any):Observable<any>{
+  signup(userId:any, password:any, email:any, name:any):Observable<any>{
     const dto={
       userId:userId,
       password:password,

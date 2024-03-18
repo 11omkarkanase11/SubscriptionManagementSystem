@@ -30,7 +30,7 @@ export class LoginComponent {
           if(response==1){
             alert("Login Success");
             this.localservice.setItem("userId", this.userId);
-            this.router.navigateByUrl('/dashboard');
+            this.router.navigateByUrl('/sidenav');
           }
           if(response==2){
             alert("Password Invalid");

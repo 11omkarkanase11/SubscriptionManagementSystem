@@ -20,6 +20,8 @@ export class LoginComponent {
   userId='';
   password='';
 
+
+  
   login(){
     if(this.userId == '' || this.password == ''){
         alert("Please enter something");

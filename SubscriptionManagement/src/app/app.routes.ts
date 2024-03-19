@@ -7,10 +7,13 @@ import { AllplanComponent } from './allplan/allplan.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminComponent } from './admin/admin.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'banner', pathMatch: 'full' },
+    {path:'banner',component:BannerComponent},
     {path:'login', component:LoginComponent},
     // {path:'dashboard', component:DashboardComponent},
     {path:'signup', component:SignupComponent},

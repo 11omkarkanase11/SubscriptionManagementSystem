@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { LocalService } from '../local.service';
 import { SubscriptionService } from '../subscription.service';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-add-plan',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './add-plan.component.html',
   styleUrl: './add-plan.component.css'
 })

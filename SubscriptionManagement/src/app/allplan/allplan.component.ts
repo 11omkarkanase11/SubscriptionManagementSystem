@@ -4,11 +4,14 @@ import { SubscriptionService } from '../subscription.service';
 import { LocalService } from '../local.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card'; // For cards
+import { MatListModule } from '@angular/material/list';   // For lists
+// Import additional modules as needed (e.g., MatIconModule for icons)
 
 @Component({
   selector: 'app-allplan',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,MatCardModule, MatListModule],
   templateUrl: './allplan.component.html',
   styleUrl: './allplan.component.css'
 })

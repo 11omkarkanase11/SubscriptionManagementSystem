@@ -27,6 +27,7 @@ export class UpgradedplansComponent implements OnInit {
         (response) => {
           console.log(response);
           this.userPlans = response;
+          
    
 
         },
@@ -41,23 +42,30 @@ export class UpgradedplansComponent implements OnInit {
   updatenewplan(planId: string, planCost: number, duration: number, serviceName: string) {
     this.localservice.setItem("newPlanId", planId);
 
+    this.subscriptionService.requiredAmount(this.localservice.getItem("planId"), planId).subscribe(
+      (response) => {
+        this.displayBalance = true;
+        this.amount = response;
+        console.log(response);
+      },
+      (error) => {
+        console.error('Error fetching user plans:', error);
+      }
+    );
+
+   
+
+  }
+  pay(planId: string, planCost: number, duration: number, serviceName: string){
     this.subscriptionService.updatePlan(this.localservice.getItem("userId"), this.localservice.getItem("planId"), planCost, duration, planId).subscribe(
       (response) => {
         if (response) {
           console.log(response);
-          this.subscriptionService.requiredAmount(this.localservice.getItem("planId"), planId).subscribe(
-            (response) => {
-              this.displayBalance = true;
-              this.amount = response;
-              console.log(response);
-            },
-            (error) => {
-              console.error('Error fetching user plans:', error);
-            }
-          );
+          alert("Plan Updated") 
+         
         }
         else {
-          alert("Account Not Created");
+          alert("Plan Not Updated");
         }
       }
     )

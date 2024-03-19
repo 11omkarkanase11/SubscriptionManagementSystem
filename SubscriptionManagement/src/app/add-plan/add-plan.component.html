@@ -1,6 +1,8 @@
-<div>
+<div class="payment-details">
     <h3>{{serviceName}}</h3>
     <p>Duration : {{duration}}</p>
     <p>Required Amount :{{userAmount}}</p>
-    <button (click)="pay()">Pay</button>
+    <!-- <button (click)="pay()">Pay</button> -->
+    <button mat-raised-button color="primary" (click)="pay()">Pay Now</button>
+
 </div>

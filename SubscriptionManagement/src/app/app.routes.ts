@@ -6,11 +6,15 @@ import { AllplanComponent } from './allplan/allplan.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminComponent } from './admin/admin.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 
 export const routes: Routes = [
+
+
     {path:'',redirectTo:'login',pathMatch:'full'},
+
     {path:'login', component:LoginComponent},
     // {path:'dashboard', component:DashboardComponent},
     {path:'upgradedplans', component:UpgradedplansComponent},

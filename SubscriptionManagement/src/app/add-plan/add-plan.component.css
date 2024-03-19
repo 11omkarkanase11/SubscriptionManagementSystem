@@ -1,0 +1,11 @@
+.payment-details {
+    /* Add your desired styles here, for example: */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  h3 {
+    margin: 0; /* Remove default margin for cleaner layout */
+  }
+  

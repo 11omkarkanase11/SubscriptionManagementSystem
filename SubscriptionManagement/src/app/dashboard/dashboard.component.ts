@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit{
   }
 
   upgrade(planId: string, serviceName: string){
-    this.router.navigateByUrl('/upgradedplans');
+    this.router.navigateByUrl('/sidenav/upgradedplans');
     this.localservice.setItem("planId", planId);
     this.localservice.setItem("serviceName",serviceName);
   }

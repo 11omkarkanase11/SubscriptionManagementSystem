@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -11,6 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LocalService } from '../local.service';
+import { MatTooltipModule } from '@angular/material/tooltip'
 
 @Component({
   selector: 'app-side-nav',
@@ -24,7 +25,8 @@ import { LocalService } from '../local.service';
     MatListModule,
     MatIconModule,
     AsyncPipe,
-    RouterModule, DashboardComponent
+    RouterModule, DashboardComponent,
+    MatTooltipModule
   ]
 })
 export class SideNavComponent {
@@ -39,5 +41,11 @@ export class SideNavComponent {
     logout(){
       this.router.navigate(['']);
       this.localservice.clear();
+    }
+    isMenuOpen = false; // Flag for menu visibility
+
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      // Implement your menu logic here (e.g., open/close a sidenav)
     }
 }

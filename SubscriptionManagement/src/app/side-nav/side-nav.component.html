@@ -22,7 +22,15 @@
         </button>
       <!-- } -->
       <span>SubscriptionManagement</span>
+      <!-- <button mat-raised-button color="primary" (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+        Log Out
+      </button> -->
+      <a mat-button color="warn" (click)="logout()" class="logout-link"> <mat-icon>power_settings_new</mat-icon>
+        Log Out
+      </a>
     </mat-toolbar>
+    <!-- <app-dashboard></app-dashboard> -->
     <router-outlet></router-outlet>
     <!-- Add Content Here -->
   </mat-sidenav-content>

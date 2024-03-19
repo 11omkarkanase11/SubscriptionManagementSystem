@@ -40,7 +40,7 @@ addPlan(planId: string, planCost: any, serviceName: any, duration :any){
   this.localservice.setItem("serviceName", serviceName);
   this.localservice.setItem("duration", duration);
 
-  this.router.navigate(['addplan']);
+  this.router.navigate(['sidenav/addplan']);
 
 }
   

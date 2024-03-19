@@ -4,15 +4,23 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/sidenav/dashboard">Your Plans</a>
-      <a mat-list-item routerLink="/sidenav/allplan">All Plans</a>
-      <a mat-list-item href="#">Link 3</a>
+    <mat-nav-list color="primary">
+      <a mat-list-item routerLink="/sidenav/dashboard" routerLinkActive="active" matTooltip="Your Plans" [matTooltipPosition]="'after'" >
+        <mat-icon>dashboard</mat-icon>
+        Your Plans
+      </a>
+      <a mat-list-item routerLink="/sidenav/allplan" routerLinkActive="active" matTooltip="All Plans" [matTooltipPosition]="'after'">
+        <mat-icon>view_list</mat-icon>
+        All Plans
+      </a>
+      <a mat-list-item href="#"> <mat-icon>link</mat-icon>
+        Link 3
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <!-- @if (isHandset$ | async) { -->
+       <!-- @if (isHandset$ | async) {  -->
         <button
           type="button"
           aria-label="Toggle sidenav"
@@ -20,7 +28,7 @@
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-      <!-- } -->
+       <!-- }  -->
       <span>SubscriptionManagement</span>
       <!-- <button mat-raised-button color="primary" (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>

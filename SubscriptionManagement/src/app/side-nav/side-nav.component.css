@@ -15,3 +15,8 @@
   top: 0;
   z-index: 1;
 }
+.logout-link {
+  position: absolute; /* Position the link absolutely */
+  top: 10px; /* Adjust top position as needed (e.g., for header height) */
+  right: 10px; /* Set it to the right side */
+}

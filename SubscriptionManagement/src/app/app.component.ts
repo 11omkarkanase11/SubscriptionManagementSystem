@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { BannerComponent } from './banner/banner.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-root',

@@ -1,42 +1,44 @@
-.loginbox {
-    width: 300px;
-    margin: 0 auto;
+/* login-signup.component.css */
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3f51b5; /* Indigo */
+    margin: 10px 0; /* Adjust margin as needed */
+    text-align: center; /* Center the text horizontally */
+    /* Add any other styles you want */
+  }
+  
+  
+  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.loginbox h2 {
-    text-align: center;
-    color: #333;
-}
-
-.loginbox label {
-    font-weight: bold;
-    color: #555;
-}
-
-.loginbox input[type="text"] {
+.input-container {
+    margin-bottom: 15px;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-.loginbox button {
+.input-container mat-form-field {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.loginbox button:hover {
-    background-color: #0056b3;
+.input-container input {
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
 }

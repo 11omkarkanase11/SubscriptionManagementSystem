@@ -7,10 +7,19 @@ import { SubscriptionService } from '../subscription.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LocalService } from '../local.service';
 import { AppComponent } from '../app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, CommonModule,HttpClientModule],
+  imports: [ FormsModule,CommonModule,HttpClientModule,
+    MatTabsModule,
+    MatInputModule,
+    MatButtonModule
+],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,6 +29,9 @@ export class LoginComponent {
 
   userId='';
   password='';
+  name='';
+  email='';
+
 
 
   
@@ -46,5 +58,20 @@ export class LoginComponent {
       )
     }
   }
+  signup(){
+    this.loginservice.signup(this.userId, this.password,this.email,this.name).subscribe(
+      (response)=>{
+        console.log(response);
+        
+        if(response){
+           this.router.navigate(['sidenav']);
+        }
+        else{
+          alert("Account Not Created");
+        }
+      }
+    )
+}
 
+  
 }

@@ -1,9 +1,39 @@
-<div class="loginbox">
-    <h2> Login </h2>
-    <label for="">Enter Your UserId :</label>
-    <input type="text" [(ngModel)]="userId"><br><br>
-    <label for="">Enter Password :</label>
-    <input type="text" [(ngModel)]="password"><br><br>
-    <button (click)="login()">Login</button>
-</div>
-
+<h2 class="heading">Subscription Management System</h2>
+<div class="container">
+    <mat-tab-group>
+      <mat-tab label="Login">
+        <form class="form-container" #loginForm="ngForm" (ngSubmit)="login()">
+          <mat-form-field class="input-container">
+            <mat-label>User ID</mat-label>
+            <input matInput type="text" id="userId" name="userId" [(ngModel)]="userId" required>
+          </mat-form-field>
+          <mat-form-field class="input-container">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" name="password" [(ngModel)]="password" required>
+          </mat-form-field>
+          <button mat-raised-button type="submit" color="primary" [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <form class="form-container" #signupForm="ngForm" (ngSubmit)=" signup()">
+          <mat-form-field class="input-container">
+            <mat-label>User ID</mat-label>
+            <input matInput type="text" id="signupUserId" name="signupUserId" [(ngModel)]="userId" required>
+          </mat-form-field>
+          <mat-form-field class="input-container">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="signupPassword" name="signupPassword" [(ngModel)]="password" required>
+          </mat-form-field>
+          <mat-form-field class="input-container">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" id="signupName" name="signupName" [(ngModel)]="name" required>
+          </mat-form-field>
+          <mat-form-field class="input-container">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" id="signupEmail" name="signupEmail" [(ngModel)]="email" required>
+        </mat-form-field>        
+          <button mat-raised-button type="submit" color="primary" [disabled]="!signupForm.valid">Sign Up</button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>

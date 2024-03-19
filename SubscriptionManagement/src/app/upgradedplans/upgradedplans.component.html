@@ -4,8 +4,13 @@
     <div class="plan-details">
         <p><strong>Duration:</strong> {{ plan.duration }} days</p>
         <p><strong>Plan Cost:</strong> {{ plan.planCost }}</p>
+        
     </div>
     <button (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName)">Update</button>
+    <div *ngIf="displayBalance">
+        <p><strong>Required Amount:</strong> {{ amount }}</p>
+        <button (click)="pay(plan.planId,plan.planCost,plan.duration,plan.serviceName)">Pay</button>
+    </div>
 </div>
 
 

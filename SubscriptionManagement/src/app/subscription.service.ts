@@ -51,7 +51,7 @@ return this.http.get<any>(`${this.url}/getupgradedplans/${planId}/${serviceName}
   }
 
 
-  updatePlan(userId:any,planId:any,planCost:any,duration:any,newPlanId:any){
+  updatePlan(userId:any,planId:any,planCost:any,duration:any,newPlanId:any):Observable<any>{
 const dto={
 userId:userId,
   planId:planId,
@@ -60,6 +60,17 @@ userId:userId,
   newPlanId:newPlanId
 };
 return this.http.post<any>(`${this.url1}/updateplan`,dto);
+
+  }
+
+  addPlanByAdmin(planId :any, serviceName:any , duration: any, planCost:any){
+    const dto={
+      planId:planId,
+      serviceName:serviceName,
+      duration:duration,
+      planCost:planCost
+    }
+    return this.http.post<any>(`${this.url1}/addplan`,dto)
 
   }
 }

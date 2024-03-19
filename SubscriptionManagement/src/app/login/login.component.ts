@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { SubscriptionService } from '../subscription.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LocalService } from '../local.service';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-login',
   standalone: true,

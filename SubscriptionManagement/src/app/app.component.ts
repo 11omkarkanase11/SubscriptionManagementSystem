@@ -13,4 +13,12 @@ export class AppComponent {
   constructor(private router: Router) {
     
   }
+  login(){
+    console.log("Login");
+    
+    this.router.navigateByUrl("/login");
+  }
+  signup(){
+    this.router.navigate(['signup']);
+  }
 }

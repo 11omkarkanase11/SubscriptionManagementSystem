@@ -18,7 +18,7 @@
         <p><strong>Plan Cost:</strong> {{ plan.planCost| currency:'INR' }}</p> -->
         <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions >
         <!-- <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button> -->
         <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">
           Choose Plan <mat-icon>arrow_forward</mat-icon></button>

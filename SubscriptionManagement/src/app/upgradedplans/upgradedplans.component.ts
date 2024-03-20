@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class UpgradedplansComponent implements OnInit {
 
   userId = ''
-  amount = 0;
+  amount = '';
   planId = ''
   userPlans: any[] = [];
   displayBalance = false;
@@ -41,21 +41,25 @@ export class UpgradedplansComponent implements OnInit {
 
   updatenewplan(planId: string, planCost: number, duration: number, serviceName: string) {
     this.localservice.setItem("newPlanId", planId);
+    this.localservice.setItem("planCost", <any> planCost);
+    this.localservice.setItem("duration", <any>duration);
 
     this.subscriptionService.requiredAmount(this.localservice.getItem("planId"), planId).subscribe(
       (response) => {
         this.displayBalance = true;
         this.amount = response;
+        
+        this.localservice.setItem("requireAmount", this.amount);
+
         console.log(response);
       },
       (error) => {
         console.error('Error fetching user plans:', error);
       }
     );
+      this.router.navigate(['sidenav/updateplan']);
+   }
 
-   
-
-  }
   pay(planId: string, planCost: number, duration: number, serviceName: string){
     this.subscriptionService.updatePlan(this.localservice.getItem("userId"), this.localservice.getItem("planId"), planCost, duration, planId).subscribe(
       (response) => {

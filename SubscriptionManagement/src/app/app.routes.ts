@@ -6,6 +6,7 @@ import { AllplanComponent } from './allplan/allplan.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminComponent } from './admin/admin.component';
+import { UpdateplanComponent } from './updateplan/updateplan.component';
 
 
 
@@ -21,7 +22,8 @@ export const routes: Routes = [
         {path:'dashboard', component:DashboardComponent},
         {path:'allplan', component:AllplanComponent},
         {path:'addplan', component:AddPlanComponent},
-        {path:'upgradedplans', component:UpgradedplansComponent}
+        {path:'upgradedplans', component:UpgradedplansComponent},
+        {path:'updateplan', component:UpdateplanComponent}
     ]
     },
     {path:'admin',component:AdminComponent}

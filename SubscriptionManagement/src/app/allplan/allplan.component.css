@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .plan-card {
@@ -24,8 +25,18 @@
 .plan-details p {
     margin: 5px 0;
 }
-
-button {
+.plan-card {
+    border: 2px solid #673ab7; /* Set border color */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    display: flex;
+    flex-direction: column;
+  }
+  .action-buttons {
+    margin-top: auto; /* Pushes the button to the bottom */
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+}
+/* button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -37,4 +48,4 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
+} */

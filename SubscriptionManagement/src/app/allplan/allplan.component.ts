@@ -6,12 +6,14 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card'; // For cards
 import { MatListModule } from '@angular/material/list';   // For lists
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 // Import additional modules as needed (e.g., MatIconModule for icons)
 
 @Component({
   selector: 'app-allplan',
   standalone: true,
-  imports: [FormsModule, CommonModule,MatCardModule, MatListModule],
+  imports: [FormsModule, CommonModule,MatCardModule, MatListModule,MatIcon, MatButtonModule],
   templateUrl: './allplan.component.html',
   styleUrl: './allplan.component.css'
 })

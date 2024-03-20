@@ -4,6 +4,7 @@ import { SubscriptionService } from '../subscription.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AddPlanComponent {
 
-  constructor(private localservice : LocalService, private service :SubscriptionService) {}
+  constructor(private localservice : LocalService, private service :SubscriptionService, private router: Router) {}
   
   planId = this.localservice.getItem("planId");
   serviceName= this.localservice.getItem("serviceName");
@@ -28,6 +29,7 @@ export class AddPlanComponent {
       (response)=>{
         if(response){
           alert("Plan added ");
+          this.router.navigate(['sidenav/dashboard'])
         }
         else{
           alert("Plan does Not added");

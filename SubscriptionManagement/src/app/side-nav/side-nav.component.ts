@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LocalService } from '../local.service';
 import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
   selector: 'app-side-nav',
@@ -26,7 +27,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatIconModule,
     AsyncPipe,
     RouterModule, DashboardComponent,
-    MatTooltipModule
+    MatTooltipModule, MatBadgeModule
   ]
 })
 export class SideNavComponent {

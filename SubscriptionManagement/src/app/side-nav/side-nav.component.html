@@ -9,13 +9,15 @@
         <mat-icon class="custom-icon-color">dashboard</mat-icon>
         <span class="custom-text-color" style="margin-left: 12px;">Active Plans</span>
       </a>
-      <a mat-list-item routerLink="/sidenav/allplan" routerLinkActive="active" matTooltip="All Plans" [matTooltipPosition]="'after'">
+      <a mat-list-item routerLink="/sidenav/allplan" routerLinkActive="active" matTooltip="User Plans" [matTooltipPosition]="'after'">
+        <mat-icon class="custom-icon-color">view_list</mat-icon>
+        <span class="custom-text-color" style="margin-left: 10px;"> User Plans</span>
+      </a>
+      <a mat-list-item routerLink="/sidenav/viewallplan" routerLinkActive="active" matTooltip="All Plans" [matTooltipPosition]="'after'">
         <mat-icon class="custom-icon-color">view_list</mat-icon>
         <span class="custom-text-color" style="margin-left: 10px;"> All Plans</span>
       </a>
-      <a mat-list-item href="#"> <mat-icon>link</mat-icon>
-        Link 3
-      </a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

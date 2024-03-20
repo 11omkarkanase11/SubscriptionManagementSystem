@@ -25,17 +25,28 @@ export class AddPlanComponent {
   duration = this.localservice.getItem("duration");
 
   pay(){
-    this.service.addPlan(this.userId, this.planId, this.userAmount, this.duration).subscribe(
+    this.service.checkPlan(this.userId, this.planId).subscribe(
       (response)=>{
         if(response){
-          alert("Plan added ");
-          this.router.navigate(['sidenav/dashboard'])
+          alert("This plan is already in use");
         }
         else{
-          alert("Plan does Not added");
+          this.service.addPlan(this.userId, this.planId, this.userAmount, this.duration).subscribe(
+            (response)=>{
+              if(response){
+                alert("Plan added ");
+                this.router.navigate(['sidenav/dashboard'])
+              }
+              else{
+                alert("Plan does Not added");
+              }
+            }
+          )
+
         }
       }
     )
+   
   }
 
 }

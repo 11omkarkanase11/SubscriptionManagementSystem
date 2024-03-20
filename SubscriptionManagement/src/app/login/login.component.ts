@@ -64,6 +64,7 @@ export class LoginComponent {
         console.log(response);
         
         if(response){
+          this.localservice.setItem("userId",this.userId);
            this.router.navigate(['sidenav']);
            this.localservice.setItem("userId",this.userId);
         }

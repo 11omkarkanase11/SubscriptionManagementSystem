@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 220px;
 }
 
 .sidenav .mat-toolbar {
@@ -24,4 +24,27 @@
 .mat-nav-list a:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background on hover */
   color: #3f51b5; /* Change text color to a darker shade (optional) */
+}
+a.mat-list-item {
+  display: flex;
+  align-items: center;
+}
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 21px;
+  width: 24px;
+  overflow: hidden;
+}
+
+.custom-icon-color {
+  color: #673ab7; /* Change this to your desired icon color */
+}
+
+.custom-text-color {
+  font-size: 18px;
+  color:  #673ab7;/* Change this to your desired text color */
 }

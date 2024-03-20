@@ -79,4 +79,8 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   checkPlan(userId:any, planId:any):Observable<any>{
     return this.http.get<any>(`${this.url}/checkexplan/${userId}/${planId}`);
   }
+
+  getAllPlan():Observable<any>{
+   return this.http.get<any>(`${this.url1}/viewallplanadmin`);
+  }
 }

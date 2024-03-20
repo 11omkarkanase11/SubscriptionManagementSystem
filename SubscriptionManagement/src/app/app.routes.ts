@@ -7,6 +7,7 @@ import { AddPlanComponent } from './add-plan/add-plan.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminComponent } from './admin/admin.component';
 import { UpdateplanComponent } from './updateplan/updateplan.component';
+import { ViewallplanComponent } from './viewallplan/viewallplan.component';
 
 
 
@@ -23,7 +24,8 @@ export const routes: Routes = [
         {path:'allplan', component:AllplanComponent},
         {path:'addplan', component:AddPlanComponent},
         {path:'upgradedplans', component:UpgradedplansComponent},
-        {path:'updateplan', component:UpdateplanComponent}
+        {path:'updateplan', component:UpdateplanComponent},
+        {path:'viewallplan', component:ViewallplanComponent}
     ]
     },
     {path:'admin',component:AdminComponent}

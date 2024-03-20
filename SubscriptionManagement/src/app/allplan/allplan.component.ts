@@ -33,6 +33,7 @@ ngOnInit(): void {
       this.allPlans= response;
     }
   )
+  
 }
 
 addPlan(planId: string, planCost: any, serviceName: any, duration :any){
@@ -41,10 +42,9 @@ addPlan(planId: string, planCost: any, serviceName: any, duration :any){
   this.localservice.setItem("amount", planCost);
   this.localservice.setItem("serviceName", serviceName);
   this.localservice.setItem("duration", duration);
-
   this.router.navigate(['sidenav/addplan']);
-
 }
+
   
 
 }

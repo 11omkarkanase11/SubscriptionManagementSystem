@@ -30,20 +30,29 @@ export class UpdateplanComponent {
   
 
   pay(){
-    this.subscriptionservice.updatePlan(this.localservice.getItem("userId"), this.localservice.getItem("planId"), this.planCost, this.duration, this.newPlanId).subscribe(
-      (response) => {
-        if (response) {
-          console.log(response);
-          alert("Plan Updated") ;
-          this.router.navigate(['sidenav/dashboard']);
-          
-         
-        }
-        else {
-          alert("Plan Not Updated");
+    this.subscriptionservice.checkPlan(this.userId, this.newPlanId).subscribe(
+      (response)=>{
+        if(response){
+          alert("This plan is already in use");
+        }else{
+          this.subscriptionservice.updatePlan(this.localservice.getItem("userId"), this.localservice.getItem("planId"), this.planCost, this.duration, this.newPlanId).subscribe(
+            (response) => {
+              if (response) {
+                console.log(response);
+                alert("Plan Updated") ;
+                this.router.navigate(['sidenav/dashboard']);
+                
+               
+              }
+              else {
+                alert("Plan Not Updated");
+              }
+            }
+          )
         }
       }
     )
+    
 
   }
 

@@ -3,6 +3,7 @@ import { LocalService } from '../local.service';
 import { SubscriptionService } from '../subscription.service';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-updateplan',
@@ -15,7 +16,7 @@ export class UpdateplanComponent {
 
  
 
-  constructor(private localservice :LocalService,private subscriptionservice: SubscriptionService){
+  constructor(private localservice :LocalService,private subscriptionservice: SubscriptionService, private router : Router){
 
   }
 
@@ -33,7 +34,9 @@ export class UpdateplanComponent {
       (response) => {
         if (response) {
           console.log(response);
-          alert("Plan Updated") 
+          alert("Plan Updated") ;
+          this.router.navigate(['sidenav/dashboard']);
+          
          
         }
         else {

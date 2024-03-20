@@ -48,3 +48,9 @@ a.mat-list-item {
   font-size: 18px;
   color:  #673ab7;/* Change this to your desired text color */
 }
+
+.notification{
+  position: absolute; /* Position the link absolutely */
+  top: 10px; /* Adjust top position as needed (e.g., for header height) */
+  right: 13%; /* Set it to the right side */
+}

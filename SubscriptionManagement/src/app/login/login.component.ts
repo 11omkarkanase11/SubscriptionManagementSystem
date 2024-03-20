@@ -65,6 +65,7 @@ export class LoginComponent {
         
         if(response){
            this.router.navigate(['sidenav']);
+           this.localservice.setItem("userId",this.userId);
         }
         else{
           alert("Account Not Created");

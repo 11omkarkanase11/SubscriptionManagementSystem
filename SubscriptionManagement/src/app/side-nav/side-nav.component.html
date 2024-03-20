@@ -5,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar></mat-toolbar>
     <mat-nav-list color="primary">
-      <a mat-list-item routerLink="/sidenav/dashboard" routerLinkActive="active" matTooltip="Your Plans" [matTooltipPosition]="'after'" >
+      <a mat-list-item routerLink="/sidenav/dashboard" routerLinkActive="active default-active" routerLinkActive="active" matTooltip="Your Plans" [matTooltipPosition]="'after'" >
         <mat-icon class="custom-icon-color">dashboard</mat-icon>
         <span class="custom-text-color" style="margin-left: 12px;">Active Plans</span>
       </a>

@@ -2,9 +2,9 @@
     <div class="plan-details">
         <p><strong>Duration:</strong> {{duration}} days</p>
         <p><strong>Plan Cost:</strong> {{planCost}}</p>
+
         <p><strong>Required Amount : </strong>{{amount | currency:'INR'}}</p>
         <button mat-raised-button color="primary" (click)="pay()">
             <mat-icon>credit_card</mat-icon>
             Pay Now</button>
-        
     </div>

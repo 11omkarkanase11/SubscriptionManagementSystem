@@ -49,6 +49,10 @@ a.mat-list-item {
   color:  #673ab7;/* Change this to your desired text color */
 }
 
+mat-sidenav-container mat-nav-list a.default-active {
+  background-color: grey; /* Example styling */
+
+}
 .notification{
   position: absolute; /* Position the link absolutely */
   top: 10px; /* Adjust top position as needed (e.g., for header height) */

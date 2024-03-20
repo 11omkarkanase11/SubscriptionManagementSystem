@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
@@ -30,8 +30,13 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatTooltipModule, MatBadgeModule
   ]
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnInit{
   constructor(private router :Router, private localservice : LocalService){}
+  ngOnInit(): void {
+ 
+      this.router.navigate(['/sidenav/dashboard']); // Navigate to Active Plans on init
+
+  }
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

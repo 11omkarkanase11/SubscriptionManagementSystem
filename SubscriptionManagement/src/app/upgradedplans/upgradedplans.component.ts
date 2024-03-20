@@ -51,6 +51,7 @@ export class UpgradedplansComponent implements OnInit {
         
 
         console.log(response);
+        this.router.navigate(['sidenav/updateplan']);
       },
       (error) => {
         console.error('Error fetching user plans:', error);

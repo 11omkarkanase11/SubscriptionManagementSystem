@@ -83,4 +83,8 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   getAllPlan():Observable<any>{
    return this.http.get<any>(`${this.url1}/viewallplanadmin`);
   }
+
+  cancelPlan(userId: any, planId:any):Observable<any>{
+   return this.http.get<any>(`${this.url}/cancelplan/${planId}/${userId}`)
+  }
 }

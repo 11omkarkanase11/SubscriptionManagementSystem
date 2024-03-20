@@ -50,5 +50,22 @@ export class DashboardComponent implements OnInit{
   viewPlans(){
     this.router.navigate(['allplan']);
   }
+  cancel(planId : string){
+    const userId = this.localservice.getItem('userId');
+    this.subscriptionService.cancelPlan( userId, planId).subscribe(
+      (response)=>{
+        console.log(response);
+        
+        if(response){
+          
+          alert("Plan Cancelled ");
+          this.router.navigate(['sidenav/allplan']);
+        }
+        else{
+          
+        }
+      }
+    )
 
+  }
 }

@@ -52,12 +52,13 @@ export class UpgradedplansComponent implements OnInit {
         this.localservice.setItem("requireAmount", this.amount);
 
         console.log(response);
+        this.router.navigate(['sidenav/updateplan']);
       },
       (error) => {
         console.error('Error fetching user plans:', error);
       }
     );
-      this.router.navigate(['sidenav/updateplan']);
+      
    }
 
   pay(planId: string, planCost: number, duration: number, serviceName: string){

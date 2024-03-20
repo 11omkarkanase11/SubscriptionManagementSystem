@@ -48,3 +48,6 @@ a.mat-list-item {
   font-size: 18px;
   color:  #673ab7;/* Change this to your desired text color */
 }
+mat-sidenav-container mat-nav-list a.default-active {
+  background-color: grey; /* Example styling */
+}

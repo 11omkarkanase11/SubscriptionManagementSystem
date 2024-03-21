@@ -4,11 +4,12 @@ import { SubscriptionService } from '../subscription.service';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-updateplan',
   standalone: true,
-  imports: [MatIcon, CommonModule],
+  imports: [MatIcon, CommonModule, MatButtonModule],
   templateUrl: './updateplan.component.html',
   styleUrl: './updateplan.component.css'
 })

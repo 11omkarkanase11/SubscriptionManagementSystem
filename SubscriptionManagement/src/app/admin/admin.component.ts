@@ -16,13 +16,12 @@ export class AdminComponent {
   serviceName ='';
   duration='';
   planCost='';
+  planType='';
 
-  constructor(private service : SubscriptionService, private router :Router){
-
-  }
+  constructor(private service : SubscriptionService, private router :Router){}
 
   addPlan(){
-      this.service.addPlanByAdmin(this.planId,this.serviceName,this.duration,this.planCost).subscribe(
+      this.service.addPlanByAdmin(this.planId,this.serviceName,this.duration,this.planCost, this.planType).subscribe(
         (response)=>{
           if(response){
             alert("Plan added");

@@ -43,9 +43,22 @@ export class LoginComponent {
       this.loginservice.login(this.userId, this.password).subscribe(
         (response)=>{
           if(response==1){
-            alert("Login Success");
-            this.localservice.setItem("userId", this.userId);
-            this.router.navigateByUrl('/sidenav');
+            console.log(response);
+            //check role 
+            this.loginservice.getRole(this.userId).subscribe(
+              (data)=>{
+                console.log(data.role);
+                if(data.role ==="admin"){
+                  this.router.navigate(['admin']);
+                }
+                else{
+                  alert("Login Success");
+                  this.localservice.setItem("userId", this.userId);
+                  this.router.navigateByUrl('/sidenav');
+
+                }
+              }
+            )
           }
           if(response==2){
             alert("Password Invalid");

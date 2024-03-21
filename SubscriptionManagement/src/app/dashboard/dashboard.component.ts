@@ -21,8 +21,11 @@ export class DashboardComponent implements OnInit{
   userId=''
   planId=''
   userPlans: any[] = [];
+userName = this.localservice.getItem("userName");
   constructor(private localservice : LocalService,private subscriptionService:SubscriptionService, private router: Router){}
   ngOnInit(): void {
+   
+
     const storedUserId = this.localservice.getItem('userId');
     if (storedUserId) {
       this.userId = storedUserId;

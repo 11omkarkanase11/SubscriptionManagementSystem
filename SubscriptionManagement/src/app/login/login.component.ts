@@ -48,6 +48,8 @@ export class LoginComponent {
             this.loginservice.getRole(this.userId).subscribe(
               (data)=>{
                 console.log(data.role);
+                console.log(data.name);
+                this.localservice.setItem("userName",data.name);
                 if(data.role ==="admin"){
                   this.router.navigate(['admin']);
                 }

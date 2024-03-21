@@ -66,12 +66,13 @@ return this.http.post<any>(`${this.url1}/updateplan`,dto);
   requiredAmount(planId:any,newPlanId:any):Observable<any>{
 return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   }
-  addPlanByAdmin(planId :any, serviceName:any , duration: any, planCost:any){
+  addPlanByAdmin(planId :any, serviceName:any , duration: any, planCost:any, planType:any){
     const dto={
       planId:planId,
       serviceName:serviceName,
       duration:duration,
-      planCost:planCost
+      planCost:planCost,
+      planType:planType
     }
     return this.http.post<any>(`${this.url1}/addplan`,dto)
 }
@@ -86,5 +87,8 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
 
   cancelPlan(userId: any, planId:any):Observable<any>{
    return this.http.get<any>(`${this.url}/cancelplan/${planId}/${userId}`)
+  }
+  getRole(userId:any):Observable<any>{
+    return this.http.get<any>(`${this.url1}/getrole/${userId}`);
   }
 }

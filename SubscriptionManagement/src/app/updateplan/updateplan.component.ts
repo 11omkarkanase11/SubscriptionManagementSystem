@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-updateplan',
   standalone: true,
-  imports: [MatIcon, CommonModule,MatButtonModule],
+  imports: [MatIcon, CommonModule, MatButtonModule],
   templateUrl: './updateplan.component.html',
   styleUrl: './updateplan.component.css'
 })

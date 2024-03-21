@@ -8,21 +8,26 @@
         <button (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button>
     </div>
 </div> -->
+
+<!-- workingcode -->
 <div class="subscription-plans">
-    <mat-card *ngFor="let plan of allPlans" class="plan-card">
-      <mat-card-header>
-        <mat-card-title>{{ plan.serviceName }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="plan-details">
-        <!-- <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+  <mat-card *ngFor="let plan of allPlans" class="plan-card">
+    <mat-card-header>
+      <mat-card-title>{{ plan.serviceName }}</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content class="plan-details">
+      <h4>({{plan.planType}})</h4>
+      <!-- <p><strong>Duration:</strong> {{ plan.duration }} days</p>
         <p><strong>Plan Cost:</strong> {{ plan.planCost| currency:'INR' }}</p> -->
-        <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
-      </mat-card-content>
-      <mat-card-actions >
-        <!-- <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button> -->
-        <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">
-          Choose Plan <mat-icon>arrow_forward</mat-icon></button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  
+      <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button> -->
+      <button mat-raised-button color="primary"
+        (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">
+        Choose Plan <mat-icon>arrow_forward</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

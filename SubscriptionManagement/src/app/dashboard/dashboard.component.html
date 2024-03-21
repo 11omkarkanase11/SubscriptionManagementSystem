@@ -32,33 +32,33 @@
     <h2>To add new Services</h2>
     <button mat-raised-button color="primary" (click)="viewPlans()">Click Here</button>
   </div> -->
-  <div id="userplan">
-    <h2>Welcome,{{userName}} </h2>
-  
-    <div *ngFor="let plan of userPlans">
-      <mat-card class="subscription-card">
-        <mat-card-header>
-          <mat-card-title>{{ plan.serviceName }}  ({{plan.planType}})</mat-card-title>
-          <mat-card-subtitle >Expiring on: {{ plan.endDate }}</mat-card-subtitle>
-          <mat-card-subtitle >Starting on: {{ plan.startDate }}</mat-card-subtitle>
-          <mat-card-subtitle >Your plan will expire in {{ plan.remainingDays}} days</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class="plan-details">
-          <p><strong>Duration:</strong> {{ plan.duration }} days</p>
-          <p><strong>Plan Cost:</strong> {{ plan.planCost | currency:'INR' }}</p>
-        </mat-card-content>
-        <mat-card-actions>
 
-            <button  *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary" (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
-          <button mat-raised-button class="cancelButton" color="primary" (click)="cancel(plan.planId)">Cancel</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  
-    <!-- <h2>Add New Services</h2>
-    <button mat-raised-button color="primary" (click)="viewPlans()">Click Here</button> -->
+
+<!-- workingcode -->
+<div id="userplan">
+  <h2>Welcome {{userName}}!! </h2>
+
+  <div *ngFor="let plan of userPlans">
+    <mat-card class="subscription-card">
+      <mat-card-header>
+        <mat-card-title>{{ plan.serviceName }} ({{plan.planType}})</mat-card-title>
+        <mat-card-subtitle>Expiring on: {{ plan.endDate }}</mat-card-subtitle>
+        <mat-card-subtitle>Starting on: {{ plan.startDate }}</mat-card-subtitle>
+        <mat-card-subtitle>Your plan will expire in {{ plan.remainingDays}} days</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="plan-details">
+        <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+        <p><strong>Plan Cost:</strong> {{ plan.planCost | currency:'INR' }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+
+        <button *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary"
+          (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
+
+
+
+        <button mat-raised-button class="cancelButton" color="primary" (click)="cancel(plan.planId)">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
- 
-<!-- app.component.html -->
-
-
+</div>

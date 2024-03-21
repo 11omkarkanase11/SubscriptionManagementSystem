@@ -31,6 +31,7 @@ ngOnInit(): void {
     (response)=>{
       console.log(response);
       this.allPlans= response;
+      this.allPlans.sort((a, b) => (a.serviceName > b.serviceName) ? 1 : -1);
     }
   )
   

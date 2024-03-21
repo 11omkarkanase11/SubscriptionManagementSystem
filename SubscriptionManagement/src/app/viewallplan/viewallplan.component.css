@@ -17,3 +17,9 @@
 .plan-card h3 {
     margin-top: 0;
 }
+.plan-card {
+    border: 2px solid #673ab7; /* Set border color */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    display: flex;
+    flex-direction: column;
+  }

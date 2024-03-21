@@ -1,5 +1,5 @@
 <h1>You can upgrade to following plans</h1>
-<div *ngFor="let plan of userPlans">
+<!-- <div *ngFor="let plan of userPlans">
     <h3>{{ plan.serviceName }}</h3>
     <div class="plan-details">
         <p><strong>Duration:</strong> {{ plan.duration }} days</p>
@@ -10,5 +10,21 @@
    
     
 </div>
-
-
+ -->
+ <div class="subscription-plans">
+    <mat-card *ngFor="let plan of userPlans" class="plan-card">
+      <mat-card-header>
+        <mat-card-title>{{ plan.serviceName }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="plan-details">
+        <!-- <p><strong>Duration:</strong> {{ plan.duration }} days</p>
+        <p><strong>Plan Cost:</strong> {{ plan.planCost| currency:'INR' }}</p> -->
+        <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
+      </mat-card-content>
+      <mat-card-actions >
+        <!-- <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button> -->
+        <button mat-raised-button color="primary" (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName)">
+          Upgrade <mat-icon>chevron_right</mat-icon></button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit{
       this.subscriptionService.displayUserPlans(this.userId).subscribe(
         (response) => {
           console.log(response);
+        
           this.userPlans = response;
         },
         (error) => {

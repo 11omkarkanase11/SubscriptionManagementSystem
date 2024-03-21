@@ -50,8 +50,6 @@
         <mat-card-actions>
 
             <button  *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary" (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
-     
-
           <button mat-raised-button class="cancelButton" color="primary" (click)="cancel(plan.planId)">Cancel</button>
         </mat-card-actions>
       </mat-card>

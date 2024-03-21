@@ -39,3 +39,16 @@
     background-color: #303f9f; /* Darker background color on hover */
   }
   
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items at the top */
+    height: 20vh; /* Adjust as needed */
+  }
+  
+  /* Optional styling */
+  h2 {
+    margin-top: 20px; /* Add space between the elements */
+  }
+  

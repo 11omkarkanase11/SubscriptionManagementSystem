@@ -40,6 +40,8 @@
         <mat-card-header>
           <mat-card-title>{{ plan.serviceName }}</mat-card-title>
           <mat-card-subtitle *ngIf="plan.endDate">Expiring on: {{ plan.endDate }}</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="plan.endDate">Starting on: {{ plan.startDate }}</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="plan.endDate">Remaining Days: {{ plan.remainingDays}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="plan-details">
           <p><strong>Duration:</strong> {{ plan.duration }} days</p>

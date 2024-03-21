@@ -26,7 +26,9 @@ export const routes: Routes = [
         {path:'upgradedplans', component:UpgradedplansComponent},
         {path:'updateplan', component:UpdateplanComponent},
         {path:'viewallplan', component:ViewallplanComponent}
+       
     ]
     },
     {path:'admin',component:AdminComponent}
+    
 ];

@@ -91,4 +91,8 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   getRole(userId:any):Observable<any>{
     return this.http.get<any>(`${this.url1}/getrole/${userId}`);
   }
+
+  getHistory(userId: any):Observable<any>{
+    return this.http.get<any>(`${this.url}/viewhistory/${userId}`);
+  }
 }

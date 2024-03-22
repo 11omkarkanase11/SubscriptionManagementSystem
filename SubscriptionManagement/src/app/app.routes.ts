@@ -8,6 +8,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminComponent } from './admin/admin.component';
 import { UpdateplanComponent } from './updateplan/updateplan.component';
 import { ViewallplanComponent } from './viewallplan/viewallplan.component';
+import { HistoryComponent } from './history/history.component';
 
 
 
@@ -25,8 +26,8 @@ export const routes: Routes = [
         {path:'addplan', component:AddPlanComponent},
         {path:'upgradedplans', component:UpgradedplansComponent},
         {path:'updateplan', component:UpdateplanComponent},
-        {path:'viewallplan', component:ViewallplanComponent}
-       
+        {path:'viewallplan', component:ViewallplanComponent},
+       {path:'history',component:HistoryComponent}
     ]
     },
     {path:'admin',component:AdminComponent},

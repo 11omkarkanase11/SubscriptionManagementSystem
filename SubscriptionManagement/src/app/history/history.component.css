@@ -1,0 +1,17 @@
+.plan-details {
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+.plan-details p {
+    margin: 5px 0;
+}
+.subscription-card {
+    border: 1px solid #3f51b5; /* Set border color */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+.cancelButton{
+    margin-left: 13px;
+}

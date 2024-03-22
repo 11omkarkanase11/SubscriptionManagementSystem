@@ -72,5 +72,13 @@ userName = this.localservice.getItem("userName");
     )
 
   }
-  
+  isHovered = false;
+
+cardHovered() {
+  this.isHovered = true;
+}
+
+cardLeft() {
+  this.isHovered = false;
+}
 }

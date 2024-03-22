@@ -39,7 +39,7 @@
   <h2>Welcome {{userName}}!! </h2>
 
   <div *ngFor="let plan of userPlans">
-    <mat-card class="subscription-card">
+    <mat-card class="subscription-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
       <mat-card-header>
         <mat-card-title>{{ plan.serviceName }} ({{plan.planType}})</mat-card-title>
         <mat-card-subtitle>Expiring on: {{ plan.endDate }}</mat-card-subtitle>
@@ -50,7 +50,7 @@
         <p><strong>Duration:</strong> {{ plan.duration }} days</p>
         <p><strong>Plan Cost:</strong> {{ plan.planCost | currency:'INR' }}</p>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions (mouseenter)="cardHovered()" (mouseleave)="cardLeft()">
 
         <button *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary"
           (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>

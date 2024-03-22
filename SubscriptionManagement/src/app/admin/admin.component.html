@@ -1,4 +1,8 @@
-<h2>Admin Page</h2>
+<div class="container">
+    <h1>Admin Page</h1>
+    <h2>Add Service Here</h2>
+  </div>
+  
 <div class="box">
     <label for="">Enter Plan Id :</label>
     <input type="text" [(ngModel)]="planId"><br><br>
@@ -10,5 +14,10 @@
     <input type="text"[(ngModel)]="duration"><br><br>
     <label for="">Enter Plan Type :</label>
     <input type="text"[(ngModel)]="planType"><br>
-    <button (click)="addPlan()">ADD Plan</button>
+    <button (click)="addPlan()">ADD Plan</button><br>
+    <a mat-button color="warn" (click)="viewAll()">View All Plans</a>
+   <a mat-button color="warn" (click)="logout()" class="logout-link"> <mat-icon>power_settings_new</mat-icon>
+        Log Out
+      </a>
+
 </div>

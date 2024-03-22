@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card'; // For cards
 import { MatListModule } from '@angular/material/list';   // For lists
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+
 // Import additional modules as needed (e.g., MatIconModule for icons)
 
 @Component({
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [FormsModule, CommonModule,MatCardModule, MatListModule,MatIcon, MatButtonModule],
   templateUrl: './allplan.component.html',
   styleUrl: './allplan.component.css'
+ 
 })
 export class AllplanComponent implements OnInit{
   
@@ -45,4 +47,14 @@ addPlan(planId: string, planCost: any, serviceName: any, duration :any){
   this.localservice.setItem("duration", duration);
   this.router.navigate(['sidenav/addplan']);
 }
+isHovered = false;
+
+cardHovered() {
+  this.isHovered = true;
+}
+
+cardLeft() {
+  this.isHovered = false;
+}
+
 }

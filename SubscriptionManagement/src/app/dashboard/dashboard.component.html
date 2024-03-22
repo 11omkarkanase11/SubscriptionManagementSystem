@@ -33,6 +33,7 @@
     <button mat-raised-button color="primary" (click)="viewPlans()">Click Here</button>
   </div> -->
 
+
 <!-- workingcode -->
 <div id="userplan">
   <h2>Welcome {{userName}}!! </h2>
@@ -53,6 +54,7 @@
 
         <button *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary"
           (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
+
 
 
         <button mat-raised-button class="cancelButton" color="primary" (click)="cancel(plan.planId)">Cancel</button>

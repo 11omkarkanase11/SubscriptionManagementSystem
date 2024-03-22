@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {Router, RouterEvent, RouterLink } from '@angular/router';
+import { FormsModule, FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, RouterEvent, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SubscriptionService } from '../subscription.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,45 +15,51 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ FormsModule,CommonModule,HttpClientModule,
+  imports: [FormsModule, CommonModule, HttpClientModule,
     MatTabsModule,
     MatInputModule,
     MatButtonModule
-],
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-   
-  constructor(private loginservice : SubscriptionService , private localservice : LocalService, private router: Router){}
-
-  userId='';
-  password='';
-  name='';
-  email='';
+  constructor(private loginservice: SubscriptionService, private localservice: LocalService, private router: Router, private fb: FormBuilder) {
+  }
 
 
 
-  
-  login(){
-    if(this.userId == '' || this.password == ''){
-        alert("Please enter something");
+
+
+
+
+  userId = '';
+  password = '';
+  name = '';
+  email = '';
+
+
+
+
+  login() {
+    if (this.userId == '' || this.password == '') {
+      alert("Please enter something");
     }
-    else{
+    else {
       this.loginservice.login(this.userId, this.password).subscribe(
-        (response)=>{
-          if(response==1){
+        (response) => {
+          if (response == 1) {
             console.log(response);
             //check role 
             this.loginservice.getRole(this.userId).subscribe(
-              (data)=>{
+              (data) => {
                 console.log(data.role);
                 console.log(data.name);
-                this.localservice.setItem("userName",data.name);
-                if(data.role ==="admin"){
+                this.localservice.setItem("userName", data.name);
+                if (data.role === "admin") {
                   this.router.navigate(['admin']);
                 }
-                else{
+                else {
                   alert("Login Success");
                   this.localservice.setItem("userId", this.userId);
                   this.router.navigateByUrl('/sidenav');
@@ -62,33 +68,33 @@ export class LoginComponent {
               }
             )
           }
-          if(response==2){
+          if (response == 2) {
             alert("Password Invalid");
-          }else{
-          if(response==3){
-            alert("InValid Credentials");
+          } else {
+            if (response == 3) {
+              alert("InValid Credentials");
+            }
           }
-        }
         }
       )
     }
   }
-  signup(){
-    this.loginservice.signup(this.userId, this.password,this.email,this.name).subscribe(
-      (response)=>{
+  signup() {
+    this.loginservice.signup(this.userId, this.password, this.email, this.name).subscribe(
+      (response) => {
         console.log(response);
-        
-        if(response){
-          this.localservice.setItem("userId",this.userId);
-           this.router.navigate(['sidenav']);
-           this.localservice.setItem("userId",this.userId);
+
+        if (response) {
+          this.localservice.setItem("userId", this.userId);
+          this.router.navigate(['sidenav']);
+          this.localservice.setItem("userId", this.userId);
         }
-        else{
+        else {
           alert("Account Not Created");
         }
       }
     )
-}
+  }
 
-  
+
 }

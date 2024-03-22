@@ -13,6 +13,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LocalService } from '../local.service';
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-side-nav',
@@ -31,7 +32,7 @@ import { MatBadgeModule } from '@angular/material/badge';
   ]
 })
 export class SideNavComponent implements OnInit{
-  constructor(private router :Router, private localservice : LocalService){}
+  constructor(private router :Router, private localservice : LocalService, private snackBar :MatSnackBar){}
   ngOnInit(): void {
  
       this.router.navigate(['/sidenav/dashboard']); // Navigate to Active Plans on init
@@ -54,4 +55,6 @@ export class SideNavComponent implements OnInit{
       this.isMenuOpen = !this.isMenuOpen;
       // Implement your menu logic here (e.g., open/close a sidenav)
     }
+    
+    
 }

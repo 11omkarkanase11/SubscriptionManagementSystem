@@ -25,10 +25,12 @@
     margin: 30px; /* Add some margin for better visuals */
     max-width: 400px;
     margin-left: 200px;
+    border: 2px solid #c9bbe1; /* Set border color */
+    border-radius: 8px; 
   }
   
   .mat-card:hover {
-    transform: scale(1.1); /* Increase size by 10% on hover */
+    transform: scale(1.1); 
   }
   
   /* Animation for subtle shadow on hover (optional) */

@@ -41,12 +41,12 @@ a.mat-list-item {
 }
 
 .custom-icon-color {
-  color: #673ab7; /* Change this to your desired icon color */
+  color: #3f51b5; /* Change this to your desired icon color */
 }
 
 .custom-text-color {
   font-size: 18px;
-  color:  #673ab7;/* Change this to your desired text color */
+  color:  #3f51b5;/* Change this to your desired text color */
 }
 
 mat-sidenav-container mat-nav-list a.default-active {

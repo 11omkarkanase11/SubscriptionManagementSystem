@@ -13,11 +13,11 @@
 <div class="subscription-plans" class="mat-card-container">
   <mat-card *ngFor="let plan of allPlans" class="plan-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
     <mat-card-header>
-      <mat-card-title>{{ plan.serviceName }}</mat-card-title>
+      <mat-card-title>{{ plan.serviceName }} |  {{plan.planType}}</mat-card-title>
 
     </mat-card-header>
     <mat-card-content class="plan-details">
-      <h4>({{plan.planType}})</h4>
+
       <!-- <p><strong>Duration:</strong> {{ plan.duration }} days</p>
         <p><strong>Plan Cost:</strong> {{ plan.planCost| currency:'INR' }}</p> -->
       <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
@@ -30,4 +30,6 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+
 

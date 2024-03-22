@@ -1,13 +1,13 @@
 .plan-details {
-    margin-left: 20px; /* Adjust margin as needed */
+    margin-left: 20px; 
 }
 
 .plan-details p {
     margin: 5px 0;
 }
 .subscription-card {
-    border: 1px solid #3f51b5; /* Set border color */
-    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    border: 1px solid #3f51b5; 
+    border-radius: 8px; 
     margin: 15px;
     display: flex;
     flex-direction: column;
@@ -16,23 +16,32 @@
     margin-left: 13px;
 }
 .mat-card-container {
-    display: flex; /* Allow flexbox for card arrangement */
-    flex-wrap: wrap; /* Wrap cards if needed */
+    display: flex; 
+    flex-wrap: wrap; 
   }
   
   .mat-card {
-    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
-    margin: 30px; /* Add some margin for better visuals */
+    border: 2px solid #c9bbe1; 
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; 
+    margin: 30px; 
     max-width: 400px;
     margin-left: 200px;
   }
-  
+/*   
   .mat-card:hover {
-    transform: scale(1.1); /* Increase size by 10% on hover */
-  }
+    transform: scale(1.1); 
+  } */
   
-  /* Animation for subtle shadow on hover (optional) */
   .mat-card:hover {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
     background-color: #ece9f1;
   }
+  .animate-button {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .animate-button:hover {
+    transform: scale(1.1);
+  }
+  

@@ -79,4 +79,14 @@ export class UpgradedplansComponent implements OnInit {
   //   )
 
   // }
+
+  isHovered = false;
+
+  cardHovered() {
+    this.isHovered = true;
+  }
+  
+  cardLeft() {
+    this.isHovered = false;
+  }
 }

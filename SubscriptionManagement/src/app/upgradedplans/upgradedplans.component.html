@@ -11,7 +11,7 @@
     
 </div>
  -->
- <div class="subscription-plans">
+ <div class="subscription-plans" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
     <mat-card *ngFor="let plan of userPlans" class="plan-card">
       <mat-card-header>
         <mat-card-title>{{ plan.serviceName }}</mat-card-title>
@@ -21,9 +21,9 @@
         <p><strong>Plan Cost:</strong> {{ plan.planCost| currency:'INR' }}</p> -->
         <p>{{ plan.planCost| currency:'INR' }}/ {{ plan.duration }} days</p>
       </mat-card-content>
-      <mat-card-actions >
+      <mat-card-actions  (mouseenter)="cardHovered()" (mouseleave)="cardLeft()">
         <!-- <button mat-raised-button color="primary" (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">Subscribe</button> -->
-        <button mat-raised-button color="primary" (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName)">
+        <button mat-raised-button color="primary" [ngClass]="{ 'animate-button': isHovered }" (click)="updatenewplan(plan.planId,plan.planCost,plan.duration,plan.serviceName) ">
           Upgrade <mat-icon>chevron_right</mat-icon></button>
       </mat-card-actions>
     </mat-card>

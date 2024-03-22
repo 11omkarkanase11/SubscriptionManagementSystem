@@ -23,6 +23,7 @@ export class AllplanComponent implements OnInit{
   
  
   allPlans:any []=[];
+  groupedPlans: { [serviceName: string]: any[] } = {};
   constructor(private service: SubscriptionService, private localservice :LocalService, private router: Router){
 
   }
@@ -34,6 +35,7 @@ ngOnInit(): void {
       console.log(response);
       this.allPlans= response;
       this.allPlans.sort((a, b) => (a.serviceName > b.serviceName) ? 1 : -1);
+      this.groupPlansByServiceName();
     }
   )
   
@@ -46,6 +48,18 @@ addPlan(planId: string, planCost: any, serviceName: any, duration :any){
   this.localservice.setItem("serviceName", serviceName);
   this.localservice.setItem("duration", duration);
   this.router.navigate(['sidenav/addplan']);
+}
+groupPlansByServiceName(): void {
+  for (const plan of this.allPlans) {
+    if (!this.groupedPlans[plan.serviceName]) {
+      this.groupedPlans[plan.serviceName] = [];
+    }
+    this.groupedPlans[plan.serviceName].push(plan);
+  }
+}
+
+getServiceNames(): string[] {
+  return Object.keys(this.groupedPlans);
 }
 isHovered = false;
 

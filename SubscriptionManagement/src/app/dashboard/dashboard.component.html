@@ -63,12 +63,12 @@
   </div>
 </div> -->
 <div id="userplan">
-  <h2>Welcome {{ userName }}!! </h2>
+  <h2 id="welcome-header">Welcome {{ userName }}!</h2>
 
   <div *ngFor="let plan of userPlans">
     <mat-card class="subscription-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
       <mat-card-header>
-        <mat-card-title>{{ plan.serviceName }} ({{ plan.planType }})</mat-card-title>
+        <mat-card-title>{{ plan.serviceName }} | {{ plan.planType }}</mat-card-title>
         <mat-card-subtitle>Expiring on: {{ plan.endDate }}</mat-card-subtitle>
         <mat-card-subtitle>Starting on: {{ plan.startDate }}</mat-card-subtitle>
         <mat-card-subtitle>Your plan will expire in {{ plan.remainingDays }} days</mat-card-subtitle>

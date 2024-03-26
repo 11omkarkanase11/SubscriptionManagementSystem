@@ -37,7 +37,7 @@ export class LoginComponent {
   password = '';
   name = '';
   email = '';
-
+uname='';
 
 
 
@@ -80,8 +80,11 @@ export class LoginComponent {
     }
   }
   signup() {
+  this.localservice.setItem("userName",this.name);
     this.loginservice.signup(this.userId, this.password, this.email, this.name).subscribe(
+
       (response) => {
+    
         console.log(response);
 
         if (response) {

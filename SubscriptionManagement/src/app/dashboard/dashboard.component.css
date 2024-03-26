@@ -42,4 +42,14 @@
   .animate-button:hover {
     transform: scale(1.1);
   }
+  #welcome-header {
+    background-color: #cdcee6; /* Background color */
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a subtle lift */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold font */
+    text-align: center; /* Center align the text */
+  }
   

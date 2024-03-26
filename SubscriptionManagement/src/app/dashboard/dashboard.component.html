@@ -64,28 +64,32 @@
 </div> -->
 <div id="userplan">
   <h2 id="welcome-header">Welcome {{ userName }}!</h2>
+  <div class="mat-card-container">
+    <div *ngFor="let plan of userPlans">
+      <mat-card class="subscription-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
+        <mat-card-header class="centered-header">
+          <mat-card-title class="title">{{ plan.serviceName }} | {{ plan.planType }}</mat-card-title>
+<div class="content">
+          <mat-card-subtitle class="startDate">Started on: {{ plan.startDate }}</mat-card-subtitle>
+          <mat-card-content class="plan-details">
+            <p> <strong>{{ plan.planCost | currency:'INR' }}/ {{ plan.duration }} days</strong></p>
+          </mat-card-content>
+          <mat-card-subtitle class="endDate">Expiring on: {{ plan.endDate }}</mat-card-subtitle>
+          <mat-card-subtitle class="expiry">Your plan will expire in <b>{{ plan.remainingDays }}</b> days</mat-card-subtitle>
+        </div>
+        </mat-card-header>
 
-  <div *ngFor="let plan of userPlans">
-    <mat-card class="subscription-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
-      <mat-card-header>
-        <mat-card-title>{{ plan.serviceName }} | {{ plan.planType }}</mat-card-title>
-        <mat-card-subtitle>Expiring on: {{ plan.endDate }}</mat-card-subtitle>
-        <mat-card-subtitle>Starting on: {{ plan.startDate }}</mat-card-subtitle>
-        <mat-card-subtitle>Your plan will expire in {{ plan.remainingDays }} days</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content class="plan-details">
-        <p><strong>Duration:</strong> {{ plan.duration }} days</p>
-        <p><strong>Plan Cost:</strong> {{ plan.planCost | currency: 'INR' }}</p>
-      </mat-card-content>
-      <mat-card-actions (mouseenter)="cardHovered()" (mouseleave)="cardLeft()">
+        <mat-card-actions (mouseenter)="cardHovered()" (mouseleave)="cardLeft()" class="button-container">
 
-        <button *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary"
-          [ngClass]="{ 'animate-button': isHovered }"
-          (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
+          <button *ngIf="plan.planType !== 'Premium'" mat-raised-button color="primary"
+            [ngClass]="{ 'animate-button': isHovered }"
+            (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
 
-        <button mat-raised-button class="cancelButton" color="primary" [ngClass]="{ 'animate-button': isHovered }"
-          (click)="cancel(plan.planId)">Cancel</button>
-      </mat-card-actions>
-    </mat-card>
+          <button mat-raised-button class="cancelButton" color="primary" [ngClass]="{ 'animate-button': isHovered }"
+            (click)="cancel(plan.planId)">Cancel</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>

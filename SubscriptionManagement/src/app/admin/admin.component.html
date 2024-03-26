@@ -6,18 +6,56 @@
 <div class="box">
     <label for="">Enter Plan Id :</label>
     <input type="text" [(ngModel)]="planId"><br><br>
-    <label for="">Enter Service Name :</label>
-    <input type="text"[(ngModel)]="serviceName"><br><br>
+    <label for="serviceName">Enter Service Name:</label>
+    <select id="serviceName" [(ngModel)]="serviceName" (change)="handleChange()">
+        <option *ngFor="let service of serviceNames" [value]="service">{{ service}}</option>
+        <option value="addNew">Add New Service</option>
+    </select>
+    
+    <div *ngIf="addNew">
+        <label for="newServiceName">Enter New Service Name:</label>
+        <input type="text" id="newServiceName" [(ngModel)]="serviceName">
+    </div>
     <label for="">Enter Plan Cost :</label>
     <input type="text"[(ngModel)]="planCost"><br><br>
     <label for="">Enter Duration :</label>
     <input type="text"[(ngModel)]="duration"><br><br>
     <label for="">Enter Plan Type :</label>
-    <input type="text"[(ngModel)]="planType"><br>
+    <select id="planType" [(ngModel)]="planType" >
+      <option value="Standard">Standard</option>
+      <option value="Premium">Premium</option>
+      <option value="Basic">Basic</option>
+  </select><br><br>
     <button (click)="addPlan()">ADD Plan</button><br>
     <a mat-button color="warn" (click)="viewAll()">View All Plans</a>
    <a mat-button color="warn" (click)="logout()" class="logout-link"> <mat-icon>power_settings_new</mat-icon>
         Log Out
       </a>
+      <style>
+        /* Style for the dropdown container */
+        .dropdown-container {
+            width: 200px; /* Adjust width as needed */
+        }
+    
+        /* Style for the dropdown label */
+        label {
+            display: block; /* Make label a block element to ensure proper spacing */
+            margin-bottom: 5px; /* Add some margin below the label */
+        }
+    
+        /* Style for the select element */
+        select {
+            width: 100%; /* Make the select element fill the container width */
+            padding: 8px; /* Add padding to the select element */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 4px; /* Add border radius */
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
+        }
+    
+        /* Style for the options within the dropdown */
+        option {
+            padding: 8px; /* Add padding to the options */
+        }
+    </style>
 
 </div>

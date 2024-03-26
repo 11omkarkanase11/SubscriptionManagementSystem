@@ -24,3 +24,86 @@
     display: flex;
     flex-direction: column;
   }
+
+
+  /* all plan component css */
+  .subscription-plans {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 20px;
+    margin-top: 10px;
+    margin-left: 13px;
+  }
+  
+  .service-card {
+    background-color: #ededf0;
+    border: 1.5px solid #c9bbe1; 
+    margin: 7px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make each service card take up full width */
+  }
+  
+  .plan-list {
+    display: flex; /* Display the plans horizontally */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .plan-card {
+    flex-basis: calc(33.33% - 20px); /* Set the width of each plan card */
+    max-width: calc(33.33% - 20px); /* Set the max width of each plan card */
+  }
+  
+  .plan-details {
+    margin-bottom: 15px;
+  }
+  
+  .plan-details p {
+    margin: 5px 0;
+  }
+  
+  .mat-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    max-width: 270px;
+  }
+  .mat-card {
+    border: 2px solid #c9bbe1; /* Set border color */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-card {
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+    margin: 20px; /* Add some margin for better visuals */
+  }
+  
+  .mat-card:hover {
+    transform: scale(1.1); /* Increase size by 10% on hover */
+  }
+  
+  /* Animation for subtle shadow on hover (optional) */
+  .mat-card:hover {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+    background-color: #e3d9f3e8;
+  }
+  /* button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+      background-color: #0056b3;
+  } */
+  

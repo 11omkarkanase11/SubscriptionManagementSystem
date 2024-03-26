@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../subscription.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -16,20 +16,41 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   planId ='';
   serviceName ='';
   duration='';
   planCost='';
   planType='';
+  serviceNames:any []=[];
+  
 
+  ngOnInit(): void {
+    this.service.serviceName().subscribe(
+      (response)=>{
+        this.serviceNames= response;
+        console.log(this.serviceNames);
+      }
+    )
+  }
   constructor(private service : SubscriptionService, private router :Router){}
+  addNew = false;
+  handleChange() {
+    if (this.serviceName === 'addNew') {
+      this.addNew= true;
+      this.serviceName = ''; // Reset new service name input field
+    }
+    else{
+      this.addNew= false;
+    }
+  }
 
   addPlan(){
       this.service.addPlanByAdmin(this.planId,this.serviceName,this.duration,this.planCost, this.planType).subscribe(
         (response)=>{
           if(response){
             alert("Plan added");
+            this.router.navigate(['admin']);
           }
         }
       )
@@ -41,5 +62,7 @@ export class AdminComponent {
    logout(){
     this.router.navigate(['login']);
    }
+
+   
 
 }

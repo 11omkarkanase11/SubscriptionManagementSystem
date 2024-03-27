@@ -35,37 +35,37 @@ export class LocalService {
   
   count =0;
 
-  pushNotification(planId: any){
+  pushNotification(serviceName: any, planType: any){
       this.count++;
       console.log(this.count);
-      this.notifications.push("Plan Cancelled: "+ planId );
+      this.notifications.push("Plan Cancelled: "+ serviceName + "("+ planType +")");
       console.log(this.notifications);
      
   }
 
-  updateNotification(){
+  updateNotification(serviceName:any){
     this.count++;
     console.log(this.count);
-    this.notifications.push("Plan Updated: " );
+    this.notifications.push("Plan Updated: "+ serviceName );
   }
 
-  addNotification(){
+  addNotification(serviceName: any, planType:any){
     this.count++;
     console.log(this.count);
-    this.notifications.push("Plan Added: " );
+    this.notifications.push("Plan Added: "+ serviceName +"("+ planType + ")");
     console.log(this.notifications);
   }
   private subject = new Subject<any>();
-  sendClicked(planId:any){
-    this.pushNotification(planId);
+  sendClicked(serviceName:any, planType: any){
+    this.pushNotification(serviceName, planType);
     this.subject.next(1);
   }
   getClicked(){
     return this.subject.asObservable();
   }
 
-  addClicked(){
-    this.addNotification();
+  addClicked(serviceName: any, planType: any){
+    this.addNotification(serviceName, planType);
     this.subject.next(1);
   }
   clearNotification(){
@@ -73,8 +73,8 @@ export class LocalService {
     this.notifications=[];
     this.subject.next(1);
   }
-  updateClicked(){
-    this.updateNotification();
+  updateClicked(serviceName:any){
+    this.updateNotification(serviceName);
     this.subject.next(1);
   }
 }

@@ -42,12 +42,13 @@ ngOnInit(): void {
   
 }
 
-addPlan(planId: string, planCost: any, serviceName: any, duration :any){
+addPlan(planId: string, planCost: any, serviceName: any, duration :any, planType:any){
 
   this.localservice.setItem("planId", planId);
   this.localservice.setItem("amount", planCost);
   this.localservice.setItem("serviceName", serviceName);
   this.localservice.setItem("duration", duration);
+  this.localservice.setItem("planType", planType);
   this.router.navigate(['sidenav/addplan']);
 }
 groupPlansByServiceName(): void {

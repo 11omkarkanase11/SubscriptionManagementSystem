@@ -28,6 +28,7 @@ export class UpdateplanComponent {
   planCost = this.localservice.getItem("planCost");
   duration= this.localservice.getItem("duration");
   newPlanId = this.localservice.getItem("newPlanId");
+  serviceName = this.localservice.getItem("serviceName");
   
 
   pay(){
@@ -41,7 +42,7 @@ export class UpdateplanComponent {
               if (response) {
                 console.log(response);
                 alert("Plan Updated") ;
-                this.localservice.updateClicked();
+                this.localservice.updateClicked(this.serviceName);
                 this.router.navigate(['sidenav/dashboard']);
                 
                

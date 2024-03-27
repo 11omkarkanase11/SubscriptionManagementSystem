@@ -35,6 +35,7 @@ export class AddPlanComponent {
             (response)=>{
               if(response){
                 alert("Plan added ");
+               this.localservice.addClicked();
                 this.router.navigate(['sidenav/dashboard'])
               }
               else{

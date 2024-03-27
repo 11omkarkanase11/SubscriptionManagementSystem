@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { NotificationComponent } from '../notification/notification.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,11 +23,16 @@ export class DashboardComponent implements OnInit{
   userId=''
   planId=''
   userPlans: any[] = [];
+  
 userName = this.localservice.getItem("userName");
-  constructor(private localservice : LocalService,private subscriptionService:SubscriptionService, private router: Router){}
+count =0;
+ 
+  constructor(private localservice : LocalService,private subscriptionService:SubscriptionService, private router: Router, private notifies : NotificationComponent){
+    
+  }
   ngOnInit(): void {
    
-
+    this.count =this.localservice.count;
     const storedUserId = this.localservice.getItem('userId');
     if (storedUserId) {
       this.userId = storedUserId;
@@ -61,7 +68,8 @@ userName = this.localservice.getItem("userName");
         console.log(response);
         
         if(response){
-          
+         
+          this.localservice.sendClicked(planId);
           alert("Plan Cancelled ");
           this.router.navigate(['sidenav/allplan']);
         }

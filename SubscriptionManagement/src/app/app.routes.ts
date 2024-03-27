@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UpdateplanComponent } from './updateplan/updateplan.component';
 import { ViewallplanComponent } from './viewallplan/viewallplan.component';
 import { HistoryComponent } from './history/history.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -27,7 +28,8 @@ export const routes: Routes = [
         {path:'upgradedplans', component:UpgradedplansComponent},
         {path:'updateplan', component:UpdateplanComponent},
         {path:'viewallplan', component:ViewallplanComponent},
-       {path:'history',component:HistoryComponent}
+       {path:'history',component:HistoryComponent},
+       {path:'notification',component:NotificationComponent}
     ]
     },
     {path:'admin',component:AdminComponent},

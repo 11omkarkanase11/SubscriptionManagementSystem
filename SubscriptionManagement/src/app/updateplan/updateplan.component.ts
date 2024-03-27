@@ -41,6 +41,7 @@ export class UpdateplanComponent {
               if (response) {
                 console.log(response);
                 alert("Plan Updated") ;
+                this.localservice.updateClicked();
                 this.router.navigate(['sidenav/dashboard']);
                 
                

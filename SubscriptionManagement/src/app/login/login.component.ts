@@ -72,7 +72,7 @@ uname='';
             alert("Password Invalid");
           } else {
             if (response == 3) {
-              alert("InValid Credentials");
+              alert("User Does not Exist");
             }
           }
         }

@@ -23,6 +23,7 @@ export class AllplanComponent implements OnInit{
   
  
   allPlans:any []=[];
+  serviceName='';
   groupedPlans: { [serviceName: string]: any[] } = {};
   constructor(private service: SubscriptionService, private localservice :LocalService, private router: Router){
 

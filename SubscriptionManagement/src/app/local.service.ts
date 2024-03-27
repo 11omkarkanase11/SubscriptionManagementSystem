@@ -77,5 +77,13 @@ export class LocalService {
     this.updateNotification(serviceName);
     this.subject.next(1);
   }
+  expireClicked(serviceName :any,planType :any, remainingDays:any){
+    this.expireNotification(serviceName, planType, remainingDays);
+    this.subject.next(1);
+  }
+  expireNotification(serviceName :any,planType :any, remainingDays:any){
+    this.count++;
+    this.notifications.push("Your " + serviceName + "("+ planType + ")" + " plan will expire in "+ remainingDays +" days");
+  }
 }
 

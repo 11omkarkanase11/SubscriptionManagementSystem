@@ -30,10 +30,13 @@ count =0;
   constructor(private localservice : LocalService,private subscriptionService:SubscriptionService, private router: Router, private notifies : NotificationComponent){
     
   }
+ 
+  
   ngOnInit(): void {
    
     this.count =this.localservice.count;
     const storedUserId = this.localservice.getItem('userId');
+    
     if (storedUserId) {
       this.userId = storedUserId;
 
@@ -43,6 +46,13 @@ count =0;
           console.log(response);
         
           this.userPlans = response;
+          for(const plan of this.userPlans){
+            if(plan.remainingDays < 2){
+             
+             this.localservice.expireClicked(plan.serviceName, plan.planType, plan.remainingDays);
+            }
+         }
+          
         },
         (error) => {
           console.error('Error fetching user plans:', error);

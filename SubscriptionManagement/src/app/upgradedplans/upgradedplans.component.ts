@@ -44,6 +44,7 @@ export class UpgradedplansComponent implements OnInit {
     this.localservice.setItem("newPlanId", planId);
     this.localservice.setItem("planCost", <any> planCost);
     this.localservice.setItem("duration", <any>duration);
+    this.localservice.setItem("serviceName", serviceName);
    
     this.subscriptionService.requiredAmount(this.localservice.getItem("planId"), planId).subscribe(
       (response) => {

@@ -86,7 +86,7 @@
             (click)="upgrade(plan.planId, plan.serviceName)">Upgrade</button>
 
           <button mat-raised-button class="cancelButton" color="primary" [ngClass]="{ 'animate-button': isHovered }"
-            (click)="cancel(plan.planId)">Cancel</button>
+            (click)="cancel(plan.planId, plan.serviceName, plan.planType)">Cancel</button>
 
         </mat-card-actions>
       </mat-card>

@@ -17,7 +17,7 @@
           </mat-card-content>
           <mat-card-actions (mouseenter)="cardHovered()" (mouseleave)="cardLeft()">
             <button mat-raised-button color="primary"
-              (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration)">
+              (click)="addPlan(plan.planId, plan.planCost, plan.serviceName, plan.duration, plan.planType)">
               Choose Plan <mat-icon>arrow_forward</mat-icon>
             </button>
           </mat-card-actions>

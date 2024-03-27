@@ -61,7 +61,7 @@ count =0;
   viewPlans(){
     this.router.navigate(['allplan']);
   }
-  cancel(planId : string){
+  cancel(planId : string, serviceName: string, planType: string){
     const userId = this.localservice.getItem('userId');
     this.subscriptionService.cancelPlan( userId, planId).subscribe(
       (response)=>{
@@ -69,7 +69,7 @@ count =0;
         
         if(response){
          
-          this.localservice.sendClicked(planId);
+          this.localservice.sendClicked(serviceName, planType);
           alert("Plan Cancelled ");
           this.router.navigate(['sidenav/allplan']);
         }

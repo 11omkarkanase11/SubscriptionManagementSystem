@@ -23,6 +23,7 @@ export class AddPlanComponent {
   userAmount = this.localservice.getItem("amount");
   userId = this.localservice.getItem("userId");
   duration = this.localservice.getItem("duration");
+  planType = this.localservice.getItem("planType");
 
   pay(){
     this.service.checkPlan(this.userId, this.planId).subscribe(
@@ -35,7 +36,7 @@ export class AddPlanComponent {
             (response)=>{
               if(response){
                 alert("Plan added ");
-               this.localservice.addClicked();
+               this.localservice.addClicked(this.serviceName, this.planType);
                 this.router.navigate(['sidenav/dashboard'])
               }
               else{

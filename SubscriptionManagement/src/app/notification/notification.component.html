@@ -1,5 +1,14 @@
 <div *ngFor="let notification of notification1">
-   <h3> {{ notification }}</h3>
-  </div>
-  <button (click)="clear()">Clear Notification</button>
+   <mat-card>
+     <mat-card-content>
+       <h3>{{ notification }}</h3>
+     </mat-card-content>
+   </mat-card>
+ </div>
+ 
+ <button mat-raised-button color="primary" (click)="clear()">
+   <mat-icon>done_all</mat-icon>
+   Mark as Read
+ </button>
+ 
  

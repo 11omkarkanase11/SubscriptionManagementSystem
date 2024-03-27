@@ -1,12 +1,17 @@
-/* login-signup.component.css */
 .heading {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3f51b5; /* Indigo */
-    margin: 10px 0; /* Adjust margin as needed */
+    font-size: 32px; /* Increase font size for better emphasis */
+    font-weight: 600; /* Use a slightly bolder font weight */
+    color: white; /* Change text color to white for better contrast */
+    background-color: #3f51b5; /* Indigo background color */
+    padding: 15px 20px; /* Add padding for spacing */
     text-align: center; /* Center the text horizontally */
+    text-transform: uppercase; /* Convert text to uppercase for visual impact */
+    letter-spacing: 1px; /* Add a little extra letter spacing for readability */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16); /* Add a subtle shadow for depth */
     /* Add any other styles you want */
   }
+  
   
   
   
@@ -14,15 +19,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .form-container {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid #2126e7;
+     border-radius: 2px; 
 }
 
 .input-container {

@@ -39,12 +39,20 @@
         <mat-icon>power_settings_new</mat-icon>
         Log Out
       </button> -->
-      <button mat-icon-button [matBadge]="count" matBadgeColor="accent" matBadgeSize="small" class="notification"(click)="notify()" >
-        <mat-icon>notifications</mat-icon>
-      </button>
-      <a mat-button color="warn" (click)="logout()" class="logout-link"> <mat-icon>power_settings_new</mat-icon>
-        Log Out
-      </a>
+      <div class="header">
+        <div class="notifications">
+          <button mat-icon-button [matBadge]="count" matBadgeColor="accent" matBadgeSize="small" class="notification" (click)="notify()">
+            <mat-icon>notifications</mat-icon>
+          </button>
+        </div>
+        <div class="logout">
+          <a mat-button color="warn" (click)="logout()" class="logout-link">
+            <mat-icon>power_settings_new</mat-icon>
+            Log Out
+          </a>
+        </div>
+      </div>
+      
     </mat-toolbar>
     <router-outlet></router-outlet>
     <!-- Add Content Here -->

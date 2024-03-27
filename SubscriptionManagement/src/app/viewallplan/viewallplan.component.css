@@ -24,7 +24,9 @@
     display: flex;
     flex-direction: column;
   }
-
+.title{
+  font-size: 15px;
+}
 
   /* all plan component css */
   .subscription-plans {
@@ -58,6 +60,7 @@
   }
   
   .plan-details {
+    font-size: 20px;
     margin-bottom: 15px;
   }
   

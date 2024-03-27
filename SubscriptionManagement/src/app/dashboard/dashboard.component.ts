@@ -48,8 +48,8 @@ count =0;
           this.userPlans = response;
           for(const plan of this.userPlans){
             if(plan.remainingDays < 2){
-             
-             this.localservice.expireClicked(plan.serviceName, plan.planType, plan.remainingDays);
+             setTimeout(()=> this.localservice.expireClicked(plan.serviceName, plan.planType, plan.remainingDays),10);
+            
             }
          }
           

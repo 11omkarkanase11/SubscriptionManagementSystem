@@ -5,11 +5,11 @@
       <div class="plan-list">
         <mat-card *ngFor="let plan of groupedPlans[serviceName]" class="plan-card" class="mat-card">
           <mat-card-header>
-            <mat-card-title>{{ plan.serviceName }}</mat-card-title>
+            <mat-card-title class="title">{{ plan.serviceName }} | {{ plan.planType }}</mat-card-title>
           </mat-card-header>
           <mat-card-content class="plan-details">
-            <h4>({{ plan.planType }})</h4>
-            <p>{{ plan.planCost | currency:'INR' }}/ {{ plan.duration }} days</p>
+        
+          <strong> <p>{{ plan.planCost | currency:'INR' }}/ {{ plan.duration }} days</p></strong> 
           </mat-card-content>
           <!-- <mat-card-actions (mouseenter)="cardHovered()" (mouseleave)="cardLeft()">
             <button mat-raised-button color="primary"

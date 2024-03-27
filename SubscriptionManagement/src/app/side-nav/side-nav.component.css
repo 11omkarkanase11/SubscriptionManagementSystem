@@ -16,11 +16,10 @@
   z-index: 2;
 }
 .logout-link {
-  position: absolute; /* Position the link absolutely */
-  top: 10px; /* Adjust top position as needed (e.g., for header height) */
-  right: 10px; /* Set it to the right side */
+  position: absolute;
+  top: 10px;
+  right: 10px; 
 }
-
 .mat-nav-list a:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background on hover */
   color: #3f51b5; /* Change text color to a darker shade (optional) */
@@ -54,7 +53,36 @@ mat-sidenav-container mat-nav-list a.default-active {
 
 }
 .notification{
-  position: absolute; /* Position the link absolutely */
-  top: 10px; /* Adjust top position as needed (e.g., for header height) */
-  right: 13%; /* Set it to the right side */
+  position: absolute;
+  top: 11px;
+  right: 10vw;
 }
+.header {
+  display: flex;
+}
+
+/* 
+.notifications,
+.logout {
+  margin-left: 10px; 
+}
+.container {
+  position: relative; 
+  width: 200px;
+  height: 100px;
+}
+
+.logout {
+  position: absolute; 
+  top: 0;
+  right: 0; 
+} */
+
+
+/* Media query for responsiveness */
+/* @media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+} */

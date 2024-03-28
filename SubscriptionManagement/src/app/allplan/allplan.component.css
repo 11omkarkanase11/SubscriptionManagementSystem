@@ -6,9 +6,11 @@
   margin-top: 10px;
   margin-left: 13px;
 }
-
+.mat-card-container{
+  background-color: white;
+}
 .service-card {
-  background-color: #ededf0;
+  background-color: #dfdff478;
   border: 1.5px solid #c9bbe1; 
   margin: 7px;
   padding: 20px;

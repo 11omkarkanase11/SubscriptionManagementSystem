@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -26,7 +27,6 @@ import { MatButtonModule } from '@angular/material/button';
 export class LoginComponent {
   constructor(private loginservice: SubscriptionService, private localservice: LocalService, private router: Router, private fb: FormBuilder) {
   }
-
 
 
 

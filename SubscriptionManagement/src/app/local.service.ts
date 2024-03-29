@@ -56,6 +56,7 @@ export class LocalService {
     console.log(this.notifications);
   }
   private subject = new Subject<any>();
+  
   sendClicked(serviceName:any, planType: any){
     this.pushNotification(serviceName, planType);
     this.subject.next(1);

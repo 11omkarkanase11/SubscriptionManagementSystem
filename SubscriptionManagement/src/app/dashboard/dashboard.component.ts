@@ -78,10 +78,10 @@ count =0;
         console.log(response);
         
         if(response){
-         
+          this.userPlans = this.userPlans.filter(plan => plan.planId !== planId);
           this.localservice.sendClicked(serviceName, planType);
           alert("Plan Cancelled ");
-          this.router.navigate(['sidenav/allplan']);
+      //    this.router.navigate(['sidenav/allplan']);
         }
         else{
           

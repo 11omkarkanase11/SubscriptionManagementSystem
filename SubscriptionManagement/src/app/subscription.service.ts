@@ -7,8 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class SubscriptionService {
   
+
   url ="http://192.168.5.104:8081/sakshi"
   url1="http://192.168.5.104:8080/omkar"
+
   constructor(private http: HttpClient) { }
 
   login(userId:any, password:any):Observable<any>{

@@ -78,7 +78,9 @@
             <p> <strong>{{ plan.planCost | currency:'INR' }}/ {{ plan.duration }} days</strong></p>
           </mat-card-content>
           <mat-card-subtitle class="endDate">Expiring on: {{ plan.endDate }}</mat-card-subtitle>
-          <mat-card-subtitle class="expiry">Your plan will expire in <b>{{ plan.remainingDays }}</b> days</mat-card-subtitle>
+          <mat-card-subtitle class="expiry" *ngIf="plan.duration!==0 && plan.duration!==1" >Your plan will expire in <b>{{ plan.remainingDays }}</b> days</mat-card-subtitle>
+          <mat-card-subtitle class="expiry" *ngIf="plan.duration===0">Your plan will expire <b>today</b></mat-card-subtitle>
+          <mat-card-subtitle class="expiry" *ngIf="plan.duration===1">Your plan will expire  <b>{{ plan.remainingDays }}</b> day</mat-card-subtitle>
         </div>
         </mat-card-header>
 

@@ -51,4 +51,14 @@
   h2 {
     margin-top: 20px; /* Add space between the elements */
   }
-  
+  .errortext{
+    color: red;
+  }
+/* Styles for the disabled button */
+button[disabled] {
+  /* Add your desired styles here */
+  color: rgba(223, 223, 223, 0.838);
+  opacity: 0.5; /* Example: reduce opacity */
+  cursor: not-allowed; /* Example: change cursor to not-allowed */
+  /* Add any other styles you want to apply to disabled buttons */
+}

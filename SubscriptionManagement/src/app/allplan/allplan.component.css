@@ -31,8 +31,9 @@
 }
 
 
-.plan-details {
-  margin-bottom: 15px;
+.plan-details[_ngcontent-ng-c1627496487] {
+  margin-bottom: 10px;
+  margin-top: 5px;
   font-size: 20px;
 }
 
@@ -57,6 +58,7 @@
   flex-direction: column;
 }
 .mat-card {
+  align-items: center;
   transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
   margin: 20px; /* Add some margin for better visuals */
 }
@@ -73,6 +75,22 @@
 .mat-card:hover {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
   background-color: #e3d9f3e8;
+}
+
+
+.type{
+  background-color: #e0d7f2bd;
+  /* padding-top: 3px; */
+  /* padding-top: 3px; */
+  font-size: 15px;
+    border-radius: 14px;
+    width: 85px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.mat-mdc-card-header {
+  text-align: center;
+  display: flex;
+  padding: 0px 16px 7px;
 }
 /* button {
     background-color: #007bff;

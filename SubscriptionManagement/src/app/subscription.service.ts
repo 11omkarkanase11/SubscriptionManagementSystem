@@ -8,8 +8,15 @@ import { Observable } from 'rxjs';
 export class SubscriptionService {
   
 
-  url ="http://localhost:8081/sakshi"
-  url1="http://localhost:8080/omkar"
+
+//sakshi's url
+//     url ="http://192.168.5.107:8080/sakshi"
+//   url1="http://192.168.5.107:8081/omkar"
+
+  //omkar's url
+  url ="http://192.168.5.104:8081/sakshi"
+  url1="http://192.168.5.104:8080/omkar"
+
 
   constructor(private http: HttpClient) { }
 

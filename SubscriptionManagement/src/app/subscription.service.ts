@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class SubscriptionService {
   
 
+
 //sakshi's url
 //     url ="http://192.168.5.107:8080/sakshi"
 //   url1="http://192.168.5.107:8081/omkar"
@@ -106,6 +107,10 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   
   serviceName():Observable<any>{
     return this.http.get<any>(`${this.url1}/getservices`);
+  }
+
+  planIdExists(planId:any):Observable<any>{
+    return this.http.get<any>(`${this.url1}/checkplanid/${planId}`)
   }
 
 }

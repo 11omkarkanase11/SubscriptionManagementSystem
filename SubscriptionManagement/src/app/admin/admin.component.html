@@ -5,7 +5,7 @@
   
 <div class="box">
     <label for="">Enter Plan Id :</label>
-    <input type="text" [(ngModel)]="planId"><br><br>
+    <input type="text" [(ngModel)]="planId" (input)="input()"><br><br>
     <label for="serviceName">Enter Service Name:</label>
     <select id="serviceName" [(ngModel)]="serviceName" (change)="handleChange()">
         <option *ngFor="let service of serviceNames" [value]="service">{{ service}}</option>

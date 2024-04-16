@@ -44,14 +44,30 @@ export class AdminComponent implements OnInit {
       this.addNew= false;
     }
   }
+  check= false;
+  input(){
+    this.service.planIdExists(this.planId).subscribe(
+      (response)=>{
+        if(response){
+          alert("PlanId already Exists");
+        }
+        else{
+          this.check= true;
+        }
+      }
+    )
+  }
 
   addPlan(){
+    
       this.service.addPlanByAdmin(this.planId,this.serviceName,this.duration,this.planCost, this.planType).subscribe(
         (response)=>{
           if(response){
             alert("Plan added");
             this.router.navigate(['viewallplan']);
           }
+        },(error)=>{
+          console.log("Something went wrong ");
         }
       )
   }

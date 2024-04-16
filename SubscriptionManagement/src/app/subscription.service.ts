@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class SubscriptionService {
   
 
-  url ="http://192.168.5.104:8081/sakshi"
-  url1="http://192.168.5.104:8080/omkar"
+  url ="http://localhost:8081/sakshi"
+  url1="http://localhost:8080/omkar"
 
   constructor(private http: HttpClient) { }
 
@@ -100,6 +100,10 @@ return this.http.get<any>(`${this.url1}/requireamount/${planId}/${newPlanId}`);
   
   serviceName():Observable<any>{
     return this.http.get<any>(`${this.url1}/getservices`);
+  }
+
+  planIdExists(planId:any):Observable<any>{
+    return this.http.get<any>(`${this.url1}/checkplanid/${planId}`)
   }
 
 }

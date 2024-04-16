@@ -50,7 +50,7 @@ export class AdminComponent implements OnInit {
         (response)=>{
           if(response){
             alert("Plan added");
-            this.router.navigate(['admin']);
+            this.router.navigate(['viewallplan']);
           }
         }
       )

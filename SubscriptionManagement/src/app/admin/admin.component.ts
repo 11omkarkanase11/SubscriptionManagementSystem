@@ -17,68 +17,73 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './admin.component.css'
 })
 export class AdminComponent implements OnInit {
-  planId ='';
-  serviceName ='';
-  duration='';
-  planCost='';
-  planType='';
-  serviceNames:any []=[];
-  
+  planId = '';
+  serviceName = '';
+  duration = '';
+  planCost = '';
+  planType = '';
+  serviceNames: any[] = [];
+  addNew = false;
+  displayError=false;
+  check = true; // Set to true by default
 
   ngOnInit(): void {
     this.service.serviceName().subscribe(
-      (response)=>{
-        this.serviceNames= response;
+      (response) => {
+        this.serviceNames = response;
         console.log(this.serviceNames);
       }
     )
   }
-  constructor(private service : SubscriptionService, private router :Router){}
-  addNew = false;
+
+  constructor(private service: SubscriptionService, private router: Router) { }
+
   handleChange() {
     if (this.serviceName === 'addNew') {
-      this.addNew= true;
+      this.addNew = true;
       this.serviceName = ''; // Reset new service name input field
     }
-    else{
-      this.addNew= false;
+    else {
+      this.addNew = false;
     }
   }
-  check= false;
-  input(){
+
+  input() {
     this.service.planIdExists(this.planId).subscribe(
-      (response)=>{
-        if(response){
-          alert("PlanId already Exists");
-        }
-        else{
-          this.check= true;
+      (response) => {
+        if (response) {
+          this.displayError=true;
+          this.check = false; // Disable the button
+        } else {
+          this.displayError=false;
+          this.check = true; // Enable the button
         }
       }
     )
   }
 
-  addPlan(){
-    
-      this.service.addPlanByAdmin(this.planId,this.serviceName,this.duration,this.planCost, this.planType).subscribe(
-        (response)=>{
-          if(response){
-            alert("Plan added");
-            this.router.navigate(['viewallplan']);
-          }
-        },(error)=>{
-          console.log("Something went wrong ");
+  addPlan() {
+    if (!this.planId || !this.serviceName || !this.duration || !this.planCost || !this.planType) {
+      alert("Please fill in all input fields.");
+      return;
+    }
+    this.service.addPlanByAdmin(this.planId, this.serviceName, this.duration, this.planCost, this.planType).subscribe(
+      (response) => {
+        if (response) {
+          alert("Plan added");
+          this.router.navigate(['viewallplan']);
         }
-      )
+      }, (error) => {
+        console.log("Something went wrong ");
+      }
+    )
   }
 
-   viewAll(){
+  viewAll() {
     this.router.navigate(['viewallplan'])
-   }
-   logout(){
+  }
+
+  logout() {
     this.router.navigate(['login']);
-   }
-
-   
-
+  }
 }

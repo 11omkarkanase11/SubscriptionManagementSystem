@@ -3,7 +3,7 @@
   margin: 5px 0;
 }
 .plan-details {
-  font-size: 22px;
+  font-size: 20px;
   margin: 15px 0px;
   display: flex; /* Use flexbox */
   justify-content: center; /* Center horizontally */
@@ -36,19 +36,19 @@
 }
 .title{
   margin-top: 4px;
-font-size: 21px;
-text-decoration: underline;
+font-size: 20px;
 }
 .startDate{
+  margin-top: 20px;
   margin-bottom: 15px;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .endDate,.expiry{
-  font-size: 16px;
+  font-size: 13px;
 }
 .expiry{
-  margin-bottom: 8px;
+  margin-top: 18px;
 }
 
 .centered-actions {
@@ -59,8 +59,18 @@ text-decoration: underline;
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 17px;
+  margin-top: 12px;
 
+}
+
+.type[_ngcontent-ng-c2358039019] {
+  background-color: #e0d7f2bd;
+  /* padding-top: 3px; */
+  /* padding-top: 3px; */
+  font-size: 15px;
+    border-radius: 14px;
+    width: 85px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* .mat-card {
@@ -85,7 +95,7 @@ text-decoration: underline;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out; 
   margin: 30px; 
-  height: 280px;
+  height: 325px;
   border: 2px solid #c9bbe1; /* Set border color */
   border-radius: 8px; 
 }

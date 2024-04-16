@@ -71,14 +71,15 @@
     <div *ngFor="let plan of userPlans">
       <mat-card class="subscription-card" class="mat-card" [ngClass]="{ 'mat-expanded': isHovered }">
         <mat-card-header class="centered-header">
-          <mat-card-title class="title">{{ plan.serviceName }} | {{ plan.planType }}</mat-card-title>
+          <mat-card-title class="title">{{ plan.serviceName }}</mat-card-title>
+          <mat-card-title class="type"> {{ plan.planType }}</mat-card-title>
 <div class="content">
           <mat-card-subtitle class="startDate">Started on: {{ plan.startDate }}</mat-card-subtitle>
           <mat-card-content class="plan-details">
             <p> <strong>{{ plan.planCost | currency:'INR' }}/ {{ plan.duration }} days</strong></p>
           </mat-card-content>
-          <mat-card-subtitle class="endDate">Expiring on: {{ plan.endDate }}</mat-card-subtitle>
-          <mat-card-subtitle class="expiry" *ngIf="plan.duration!==0 && plan.duration!==1" >Your plan will expire in <b>{{ plan.remainingDays }}</b> days</mat-card-subtitle>
+          <mat-card-subtitle class="endDate">Expires on: {{ plan.endDate }}</mat-card-subtitle>
+          <mat-card-subtitle class="expiry" *ngIf="plan.duration!==0 && plan.duration!==1" ><b>{{ plan.remainingDays }}</b> days left</mat-card-subtitle>
           <mat-card-subtitle class="expiry" *ngIf="plan.duration===0">Your plan will expire <b>today</b></mat-card-subtitle>
           <mat-card-subtitle class="expiry" *ngIf="plan.duration===1">Your plan will expire  <b>{{ plan.remainingDays }}</b> day</mat-card-subtitle>
         </div>
